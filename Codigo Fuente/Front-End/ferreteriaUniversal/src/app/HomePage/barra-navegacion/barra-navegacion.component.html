@@ -1,5 +1,5 @@
-<div style="height: 12vh;">
-  <mat-toolbar color="primary">
+<div style="height: 12vh; background-color: white;">
+  <mat-toolbar >
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
@@ -17,16 +17,14 @@
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-
-    <mat-sidenav #sidenav fxFlexFill>
-      <mat-nav-list>
-        <a href="#" mat-list-item>Inicio</a>
-        <a href="#" mat-list-item>Quienes Somos</a>
-        <!-- <a href="#" mat-list-item>Servicios</a>-->
-        <!-- <a href="#" mat-list-item>Menu Item 4</a> -->
-        <a href="#" mat-list-item>Productos</a>
-        <a href="#"mat-list-item>Contacto</a>
-      </mat-nav-list>
-    </mat-sidenav>
+  <mat-sidenav #sidenav fxFlexFill>
+    <mat-nav-list>
+      <a href="#" mat-list-item>Inicio</a>
+      <a href="#" mat-list-item>Quienes Somos</a>
+      <!-- <a href="#" mat-list-item>Servicios</a>-->
+      <!-- <a href="#" mat-list-item>Menu Item 4</a> -->
+      <a href="#" mat-list-item>Productos</a>
+      <a href="#" mat-list-item>Contacto</a>
+    </mat-nav-list>
+  </mat-sidenav>
 </div>
-

@@ -1,22 +1,19 @@
-<mat-toolbar color="second">
-  <mat-toolbar-row>
-    <div>
-      <ul class="social-icons">
-        <li><a href="tel:{{empresa.telefono[0]}}" class="social-icon"> <i class="fa fa-phone"></i>{{empresa.telefono[0]}} </a></li>
-        <li><a href="https://wa.me/{{empresa.whatsapp}}" class="social-icon"> <i class="fa fa-whatsapp"></i>{{empresa.telefono[1]}}</a></li>
+<div class="contacto" fxShow="true" fxHide.lt-md s>
+  <ul class="social-icons">
+    <li><a href="tel:{{empresa.telefono[0]}}" class="social-icon"> <i class="fa fa-phone"></i>{{empresa.telefono[0]}}
+      </a></li>
+    <li><a href="https://wa.me/{{empresa.whatsapp}}" class="social-icon"> <i
+          class="fa fa-whatsapp"></i>{{empresa.telefono[1]}}</a></li>
 
-        <li><a href="{{empresa.ubicacion.mapsLocation}}" class="social-icon"> <i class="fa fa-map-marker"></i>
-          {{empresa.ubicacion.direccion}} ({{empresa.ubicacion.ciudad}},{{empresa.ubicacion.pais}})</a></li>
+    <li><a href="{{empresa.ubicacion.mapsLocation}}" class="social-icon"> <i class="fa fa-map-marker"></i>
+        {{empresa.ubicacion.direccion}} ({{empresa.ubicacion.ciudad}},{{empresa.ubicacion.pais}})</a></li>
 
-        <li><a href="mailto:{{empresa.email}}" class="social-icon"> <i class="fa fa-envelope-o"></i>{{empresa.email}}</a></li>
+    <li><a href="mailto:{{empresa.email}}" class="social-icon"> <i class="fa fa-envelope-o"></i> Email:
+        {{empresa.email}}</a></li>
 
-        <li><a href="{{empresa.facebook}}" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
-        <li><a href="{{empresa.twitter}}" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
-        <li><a href="{{empresa.instagram}}" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
-        <li><a href="{{empresa.linkendin}}" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
-
-
-      </ul>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+    <li><a href="{{empresa.facebook}}" class="social-icon"> <i class="fa fa-facebook"></i></a></li>
+    <li><a href="{{empresa.twitter}}" class="social-icon"> <i class="fa fa-twitter"></i></a></li>
+    <li><a href="{{empresa.instagram}}" class="social-icon"> <i class="fa fa-instagram"></i></a></li>
+    <li><a href="{{empresa.linkendin}}" class="social-icon"> <i class="fa fa-linkedin"></i></a></li>
+  </ul>
+</div>

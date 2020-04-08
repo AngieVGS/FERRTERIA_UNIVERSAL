@@ -20,6 +20,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { CaracteristicasComponent } from './HomePage/caracteristicas/caracteristicas.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     AppComponent,
     BarraNavegacionComponent,
     BarraContactoComponent,
-    HomePageComponent
+    HomePageComponent,
+    CaracteristicasComponent
   ],
   imports: [
     BrowserModule,
