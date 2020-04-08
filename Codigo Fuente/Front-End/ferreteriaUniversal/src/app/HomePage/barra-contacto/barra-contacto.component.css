@@ -1,0 +1,20 @@
+ @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+ .social-icons li {
+   vertical-align: text-top;
+   display: inline;
+   align-items: center;
+   font-size: 1.0em;
+   padding: 0.2em;
+ }
+
+ .cell-phone li {
+  vertical-align: text-top;
+  display: inline;
+  align-items: center;
+  font-size: 1.0em;
+  padding: 0.2em;
+}
+
+ a {
+  color:#C2C2C2;
+}
