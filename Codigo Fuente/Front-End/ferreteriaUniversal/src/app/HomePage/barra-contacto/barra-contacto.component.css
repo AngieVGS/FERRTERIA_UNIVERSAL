@@ -3,7 +3,7 @@
    vertical-align: text-top;
    display: inline;
    align-items: center;
-   font-size: 0.8em;
+   font-size: 1.0em;
    padding: 0.9em;
  }
 
@@ -19,7 +19,7 @@
 
 .contacto{
   padding-top: 2vh;
-  height: 3vh;
+  height: 4vh;
   display: flex;
   align-items: center;
   justify-content: center;

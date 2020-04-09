@@ -1,11 +1,11 @@
-<div style="height: 12vh; background-color: white;">
+<div style="height: 85vh; background-color: white;">
   <div class="toolbar">
     <mat-toolbar>
       <mat-toolbar-row>
-        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" >
           <mat-icon>menu</mat-icon>
         </button>
-        <span>Ferreteria Universal</span>
+        <span>Ferreteria Universal S.A.S</span>
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md>
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
@@ -19,9 +19,9 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-  <div class="sidenav">
-    <mat-sidenav #sidenav fxFlexFill>
-      <mat-nav-list>
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list class="options-slider">
         <a mat-list-item>Inicio</a>
         <a mat-list-item (click)="goToQuienesSomos()">Quienes Somos</a>
         <!-- <a href="#" mat-list-item>Servicios</a>-->
@@ -30,5 +30,9 @@
         <a mat-list-item>Contacto</a>
       </mat-nav-list>
     </mat-sidenav>
-  </div>
+    <mat-sidenav-content fxFlexFill>
+      <ng-component></ng-component>
+      <app-footer></app-footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
