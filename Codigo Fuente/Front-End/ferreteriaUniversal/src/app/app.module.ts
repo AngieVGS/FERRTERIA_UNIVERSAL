@@ -23,6 +23,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { CaracteristicasComponent } from './HomePage/caracteristicas/caracteristicas.component';
 import { WhatWeDoComponent } from './HomePage/what-we-do/what-we-do.component';
 import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto.component';
+import { FooterComponent } from './HomePage/footer/footer.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto
     HomePageComponent,
     CaracteristicasComponent,
     WhatWeDoComponent,
-    BuzonContactoComponent
+    BuzonContactoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
