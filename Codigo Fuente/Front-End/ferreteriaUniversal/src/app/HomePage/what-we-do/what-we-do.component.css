@@ -2,11 +2,23 @@
     color: #007bff;
 }
 .borde-lineas{
-    border-style: dashed  !important;
+    border-style: dashed !important;
     border-color: #707070 !important;
 }
 
 .borde-lineas:hover{
     border-style: dashed !important;
     border-color: #007bff !important;
+}
+
+.img-fondo{
+    width: auto;
+}
+.btn-ver-mas-serv{
+    background-color: #00cdb3 !important;
+    color: white;
+}
+.btn-ver-mas-serv:hover{
+    background-color: #11af9a !important;
+    color: white;
 }
