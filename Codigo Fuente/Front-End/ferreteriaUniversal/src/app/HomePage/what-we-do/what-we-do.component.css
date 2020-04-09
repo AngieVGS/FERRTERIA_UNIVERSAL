@@ -2,11 +2,11 @@
     color: #007bff;
 }
 .borde-lineas{
-    border-style: 1px dashed !important;
+    border-style: dashed  !important;
     border-color: #707070 !important;
 }
 
 .borde-lineas:hover{
-    border-style: 1px dashed !important;
+    border-style: dashed !important;
     border-color: #007bff !important;
 }
