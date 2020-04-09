@@ -1,0 +1,55 @@
+.container{
+    background: #007bff;
+    background: linear-gradient(to right, rgb(1,194,203), rgb(0,209,172));
+    /* border: 2px solid black; */
+}
+
+.container.cards{
+    padding-bottom: 10%;
+}
+
+.container-fluid{
+    /* background: #007bff; */
+    background: linear-gradient(to right, rgb(1,194,203), rgb(0,209,172));
+    padding: 15%;
+}
+
+#ql{
+    font-size: 30px;
+    line-height: 30px;
+    color: rgb(0,209,172);
+}
+
+h3, h4, h1{
+    color: white;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 5px 0px;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+h4{
+    font-weight: lighter;
+}
+
+h3{
+    font-weight: 400;
+}
+
+#autor_testimonio{
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    padding-top: 0px;
+}
+
+#img_autor_testimonio{
+    border-radius: 50%;
+    height: 100%;
+    display: block;
+    margin: auto;
+}

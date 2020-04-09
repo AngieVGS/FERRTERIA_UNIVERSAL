@@ -24,6 +24,7 @@ import { CaracteristicasComponent } from './HomePage/caracteristicas/caracterist
 import { WhatWeDoComponent } from './HomePage/what-we-do/what-we-do.component';
 import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto.component';
 import { FooterComponent } from './HomePage/footer/footer.component';
+import { TestimoniosComponent } from './HomePage/testimonios/testimonios.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { FooterComponent } from './HomePage/footer/footer.component';
     CaracteristicasComponent,
     WhatWeDoComponent,
     BuzonContactoComponent,
-    FooterComponent
+    FooterComponent,
+    TestimoniosComponent
   ],
   imports: [
     BrowserModule,
