@@ -13,8 +13,19 @@ export class BarraNavegacionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToInicio(){
+    this.router.navigate(['home']);
+  }
+
+  goToProductos(){
+    this.router.navigate(['Productos']);
+  }
+
+  goToContacto(){
+    this.router.navigate(['Contacto']);
+  }
+
   goToQuienesSomos(){
     this.router.navigate(['app-what-we-do']);
   }
-
 }
