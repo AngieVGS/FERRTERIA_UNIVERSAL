@@ -10,4 +10,7 @@ export class Empresa{
   facebook = 'https://www.facebook.com/FerreteriaUniversalSas/';
   twitter = '';
   linkendin = '';
+  mision = '';
+  vision = '';
+  quehacemos = '' ;
 }

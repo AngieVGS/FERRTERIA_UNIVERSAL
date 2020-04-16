@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-// Componenetes creados
-import { BarraNavegacionComponent } from './HomePage/barra-navegacion/barra-navegacion.component';
-import { BarraContactoComponent } from './HomePage/barra-contacto/barra-contacto.component';
-import { HomePageComponent } from './home-page/home-page.component';
+
 
 // Modulos Creados
 
@@ -20,6 +17,12 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
+// Componenetes creados
+import { BarraNavegacionComponent } from './HomePage/barra-navegacion/barra-navegacion.component';
+import { BarraContactoComponent } from './HomePage/barra-contacto/barra-contacto.component';
+import { AboutUsComponent } from './AboutUs/about-us/about-us.component';
+import { HomePageComponent } from './HomePage/home-page/home-page.component';
 import { CaracteristicasComponent } from './HomePage/caracteristicas/caracteristicas.component';
 import { WhatWeDoComponent } from './HomePage/what-we-do/what-we-do.component';
 import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto.component';
@@ -38,7 +41,8 @@ import { ProductosComponent } from './HomePage/productos/productos.component';
     BuzonContactoComponent,
     FooterComponent,
     TestimoniosComponent,
-    ProductosComponent
+    ProductosComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
