@@ -1,0 +1,43 @@
+.informacion-contacto{
+  text-align: center;
+  margin: 5vw;
+}
+
+.titulo{
+  font-size: 4vw;
+  font-family: Poppins;
+  font-weight: 700;
+}
+
+.informacion{
+  text-align: left;
+  margin: 5vw;
+}
+
+.subtitulos{
+  font-size: 20px;
+  font-family: Poppins;
+  font-weight: 600;
+}
+
+.text-info{
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 500;
+}
+
+a {
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: 500;
+  margin:20px;
+}
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+ .social-icons a {
+   vertical-align: text-top;
+   display: inline;
+   align-items: center;
+   font-size: 50em;
+   padding: 0.5em;
+ }

@@ -10,8 +10,8 @@
         <div fxShow="true" fxHide.lt-md>
           <!-- The following menu items will be hidden on both SM and XS screen sizes -->
           <a mat-button (click)="goToInicio()">Inicio</a>
-          <a  mat-button (click)="goToQuienesSomos()" mat-button>Quienes Somos</a>
-          <!-- <a href="#" mat-button>Servicios</a> -->
+          <a mat-button (click)="goToQuienesSomos()" mat-button>Quienes Somos</a>
+          <a mat-button (click)="goToServicios()" mat-button>Servicios</a>
           <a mat-button (click)="goToProductos()">Productos</a>
           <!--<a href="#" mat-button>Blog</a> -->
           <a mat-button (click)="goToContacto()">Contacto</a>
@@ -24,7 +24,7 @@
       <mat-nav-list class="options-slider">
         <a mat-list-item (click)="goToInicio()">Inicio</a>
         <a mat-list-item (click)="goToQuienesSomos()">Quienes Somos</a>
-        <!-- <a href="#" mat-list-item>Servicios</a>-->
+        <a mat-list-item (click)="goToQuienesSomos()">Servicios</a>
         <!-- <a href="#" mat-list-item>Menu Item 4</a> -->
         <a mat-list-item (click)="goToProductos()">Productos</a>
         <a mat-list-item (click)="goToContacto()">Contacto</a>

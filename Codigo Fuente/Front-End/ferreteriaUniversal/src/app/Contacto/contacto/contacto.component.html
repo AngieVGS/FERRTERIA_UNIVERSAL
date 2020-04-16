@@ -1,0 +1,40 @@
+<br>
+<app-buzon-contacto></app-buzon-contacto>
+<div class="informacion-contacto">
+
+  <h1 class="titulo">Información de Contacto</h1>
+  <div class="container">
+    <div class="row">
+
+      <div class="col">
+        <div class="informacion">
+          <h2 class="subtitulos">Ubicación</h2>
+          <h3>{{empresa.ubicacion.direccion}} ,({{empresa.ubicacion.ciudad}}-{{empresa.ubicacion.pais}})</h3>
+
+          <h2 class="subtitulos">Telefonos</h2>
+          <a href="https://wa.me/{{empresa.whatsapp}}" class="social-icon"><i class="fa fa-whatsapp"></i>{{empresa.telefono[1]}}</a>
+          <br>
+          <br>
+          <a href="tel:{{empresa.telefono[0]}}" class="social-icon"> <i class="fa fa-phone"></i>{{empresa.telefono[0]}}</a>
+
+
+          <h2 class="subtitulos">Correo Electronico</h2>
+          <a href="mailto:{{empresa.email}}" class="social-icon"> <i class="fa fa-envelope-o"></i> Email: {{empresa.email}}</a>
+
+          <h2 class="subtitulos">Redes Sociales</h2>
+          <a href="{{empresa.facebook}}" class="social-icon"> <i class="fa fa-facebook"></i></a>
+          <a href="{{empresa.twitter}}" class="social-icon"> <i class="fa fa-twitter"></i></a>
+          <a href="{{empresa.instagram}}" class="social-icon"> <i class="fa fa-instagram"></i></a>
+          <a href="{{empresa.linkendin}}" class="social-icon"> <i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mapa">
+          2 of 2
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3971.2185354021935!2d-73.3683642!3d5.5345701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e6a7c2b756cb76f%3A0xc31259be27312b40!2sFerreteria%20Universal!5e0!3m2!1ses-419!2sco!4v1587010033285!5m2!1ses-419!2sco" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

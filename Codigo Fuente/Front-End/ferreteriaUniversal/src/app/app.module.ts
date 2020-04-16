@@ -29,6 +29,7 @@ import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto
 import { FooterComponent } from './HomePage/footer/footer.component';
 import { TestimoniosComponent } from './HomePage/testimonios/testimonios.component';
 import { ProductosComponent } from './HomePage/productos/productos.component';
+import { ContactoComponent } from './Contacto/contacto/contacto.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProductosComponent } from './HomePage/productos/productos.component';
     FooterComponent,
     TestimoniosComponent,
     ProductosComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
