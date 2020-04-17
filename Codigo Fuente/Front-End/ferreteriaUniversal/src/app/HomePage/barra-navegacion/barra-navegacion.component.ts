@@ -29,6 +29,6 @@ export class BarraNavegacionComponent implements OnInit {
     this.router.navigate(['aboutUs']);
   }
   goToServicios(){
-    this.router.navigate(['sevices']);
+    this.router.navigate(['Servicios']);
   }
 }

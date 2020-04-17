@@ -30,6 +30,7 @@ import { FooterComponent } from './HomePage/footer/footer.component';
 import { TestimoniosComponent } from './HomePage/testimonios/testimonios.component';
 import { ProductosComponent } from './HomePage/productos/productos.component';
 import { ContactoComponent } from './Contacto/contacto/contacto.component';
+import { ServiciosComponent } from './Servicios/servicios/servicios.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
     TestimoniosComponent,
     ProductosComponent,
     AboutUsComponent,
-    ContactoComponent
+    ContactoComponent,
+    ServiciosComponent
   ],
   imports: [
     BrowserModule,

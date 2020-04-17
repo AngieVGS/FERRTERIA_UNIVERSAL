@@ -1,0 +1,81 @@
+  .jumbotron_principal {
+    font-family: 'Montserrat', sans-serif;
+    padding: 150px 0;
+    background: url("/assets/img_servicios/TITULO.jpg") center center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    position: relative;
+  }
+
+  .texto_jumbotron{
+      max-width: 70%;
+      border: 2px solid black;
+      padding: 5%;
+      background-color: rgb(248,248,251);
+  }
+  
+  .jumbotron_principal h1 {
+    font-size: 70px;
+    margin-bottom: 10px;
+    color: #000000;
+    line-height: 100%;
+    font-weight: bold;
+  }
+  
+  .jumbotron_principal p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    color: #000000;
+  }
+
+  .principal{
+    /* border: 2px solid blue; */
+    background-color: white;
+}
+
+.tarjeta_servicio{
+    border: 2px solid rgb(159,159,159);
+    border-style: dotted;
+}
+
+/* .borde_tarjeta_servicio :hover{
+    border: 2px solid rgb(73,160,254);
+    border-style: dotted;
+} */
+
+.card-title, .card-text{
+    color: rgb(54,55,90);
+}
+
+.contactarnos{
+    background-color: rgb(248,249,251);
+    height: 100%;
+}
+  
+.texto_jumbotron_2 {
+    max-width: 100%;
+    /* border: 2px solid black; */
+    padding: 5%;
+    background-color: rgb(248,248,251);
+}
+
+.texto_jumbotron_2 h1 {
+    font-size: 60px;
+    line-height: 100%;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: rgb(54,55,90);
+  }
+
+.boton_contactarse{
+    background: #007bff;
+    background: linear-gradient(to right, rgb(1,194,203), rgb(0,209,172));
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+    margin-top: 10px;
+    border-style: none;
+}
