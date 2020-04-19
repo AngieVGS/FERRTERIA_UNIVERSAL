@@ -3,29 +3,16 @@
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
       <h1 class="mt-5 color-letra-azul titulo2">Nuestros productos</h1>
       <p class="color-letra-azul">
-        Nosequecosasponeahiperomeinagino que toca ponerlas despuesentoinces esto
-        es un ejemplo de comoquedara ponerlas despuesentoinces esto es un
-        ejemplo de comoquedara
+        Ofrecemos productos en las siguientes categorias, si deseas conocer mas ingresa en alguna categoria o puedes ver todos al dar click en "Todos" .
       </p>
     </div>
   </div>
   <div class="container">
     <div class="mb-3">
-      <button type="button" class="btn btn-info rounded-pill pestanas">
-        <strong>Product1</strong>
-      </button>
-      <button type="button" class="btn btn-info rounded-pill pestanas">
-        <strong>Product2</strong>
-      </button>
-      <button type="button" class="btn btn-info rounded-pill pestanas">
-        <strong>Product3</strong>
-      </button>
-      <button type="button" class="btn btn-info rounded-pill pestanas">
-        <strong>Product4</strong>
-      </button>
-      <button type="button" class="btn btn-info rounded-pill pestanas">
-        <strong>Product5</strong>
-      </button>
+      <mat-chip-list>
+        <mat-chip>Todos</mat-chip>
+        <mat-chip *ngFor="let enum of categorias | keyvalue">{{enum.value}}</mat-chip>
+      </mat-chip-list>
     </div>
     <div class="card-columns">
       <div class="card">

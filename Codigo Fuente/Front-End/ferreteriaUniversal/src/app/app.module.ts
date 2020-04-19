@@ -17,6 +17,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
+
 
 // Componenetes creados
 import { BarraNavegacionComponent } from './HomePage/barra-navegacion/barra-navegacion.component';
@@ -30,6 +33,9 @@ import { FooterComponent } from './HomePage/footer/footer.component';
 import { TestimoniosComponent } from './HomePage/testimonios/testimonios.component';
 import { ProductosComponent } from './HomePage/productos/productos.component';
 import { ContactoComponent } from './Contacto/contacto/contacto.component';
+import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
+import { CardProductoComponent } from './Productos/card-producto/card-producto.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +50,9 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
     TestimoniosComponent,
     ProductosComponent,
     AboutUsComponent,
-    ContactoComponent
+    ContactoComponent,
+    SeccionProductosComponent,
+    CardProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +64,11 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatCardModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
