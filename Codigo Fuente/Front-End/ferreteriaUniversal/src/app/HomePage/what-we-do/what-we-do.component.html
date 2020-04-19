@@ -9,10 +9,10 @@
                     <img src="assets/ventap.png" class="card-img-top mt-2" alt="imagen venta de productos" style="width: 100px; margin: auto;">
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title color-letra-azul">Venta de productos</h1>
-                        <p class="card-text">Venta de productos ferreteros.</p>
+                        <p class="card-text">Somos proveedores de herramientas, articulos y productos de ferreteria.</p>
                     </div>
                     <div class="card-footer bg-transparent border-top-0 mb-2 mt-0">
-                        <a type="button" class="saber-mas">
+                        <a type="button" (click)="goToQuienesSomos()" class="saber-mas">
                             <strong>Saber más</strong>
                             <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,10 +29,9 @@
                     <img src="assets/mantenp.png" class="card-img-top mt-2" alt="imagenmantenimiento" style="width: 100px; margin: auto;">
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title color-letra-azul">Servicio de mantenimiento de herramientas</h1>
-                        
-                    </div>
+                   </div>
                     <div class="card-footer bg-transparent border-top-0 mb-2 mt-0">
-                        <a type="button" class="saber-mas">
+                        <a type="button" (click)="goToServicios()" class="saber-mas">
                             <strong>Saber más</strong>
                             <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -49,10 +48,10 @@
                     <img src="assets/cerrajeriap.png" class="card-img-top mt-2" alt="imagen servcerrajeria" style="width: 100px; margin: auto;">
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title color-letra-azul">Servicio de cerrajería</h1>
-                        
+
                     </div>
                     <div class="card-footer bg-transparent border-top-0 mb-2 mt-0">
-                        <a type="button" class="saber-mas">
+                        <a type="button" (click)="goToServicios()" class="saber-mas">
                             <strong>Saber más</strong>
                             <svg class="bi bi-arrow-right" width="1em" height="1em" viewBox="0 0 16 16"
                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -74,6 +73,5 @@
     <div class="card-img-overlay text-center">
         <h1 class="card-text color-letra-azul">Marcamos la diferencia</h1>
         <h1 class="card-title titulo color-letra-azul mt-2 mb-2">La mejor empresa para adquirir tus herramientas</h1>
-        <button class="btn btn-ver-mas-serv mt-5">Ver más servicios</button>
     </div>
 </div>

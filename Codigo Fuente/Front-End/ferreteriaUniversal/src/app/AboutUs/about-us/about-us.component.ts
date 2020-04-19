@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Empresa } from 'src/app/models/Empresa';
 
 @Component({
   selector: 'app-about-us',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutUsComponent implements OnInit {
 
+  empresa  = new Empresa();
   constructor() { }
 
   ngOnInit(): void {

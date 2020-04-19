@@ -5,6 +5,7 @@
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
           <mat-icon>menu</mat-icon>
         </button>
+        <img src='/assets/logo.png' style="width:100px; height: 70px;">
         <span>Ferreteria Universal S.A.S</span>
         <span class="menu-spacer"></span>
         <div fxShow="true" fxHide.lt-md>
@@ -13,7 +14,6 @@
           <a mat-button (click)="goToQuienesSomos()" mat-button>Quienes Somos</a>
           <a mat-button (click)="goToServicios()" mat-button>Servicios</a>
           <a mat-button (click)="goToProductos()">Productos</a>
-          <!--<a href="#" mat-button>Blog</a> -->
           <a mat-button (click)="goToContacto()">Contacto</a>
         </div>
       </mat-toolbar-row>
@@ -25,7 +25,6 @@
         <a mat-list-item (click)="goToInicio()">Inicio</a>
         <a mat-list-item (click)="goToQuienesSomos()">Quienes Somos</a>
         <a mat-list-item (click)="goToQuienesSomos()">Servicios</a>
-        <!-- <a href="#" mat-list-item>Menu Item 4</a> -->
         <a mat-list-item (click)="goToProductos()">Productos</a>
         <a mat-list-item (click)="goToContacto()">Contacto</a>
       </mat-nav-list>

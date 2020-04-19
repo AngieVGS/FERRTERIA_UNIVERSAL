@@ -12,8 +12,8 @@
         <h1 class="titulo">Ferreteria Universal</h1>
         <h2 class="frase">"Danos el gusto te atenterte, te brindaremos la mejor asesoria en herramientas para tus
           trabajos."</h2>
-        <button type="button" class="btn btn-primary">Leer mas</button>
-        <button type="button" class="btn btn-outline-light">Contactanos</button>
+        <button type="button" (click)="goToQuienesSomos()" class="btn btn-primary">Leer mas</button>
+        <button type="button" (click)="goToContacto()" class="btn btn-outline-light">Contactanos</button>
       </div>
     </div>
     <div class="carousel-item">
@@ -22,8 +22,8 @@
         <h1 class="titulo">Servicio de Cerrajeria</h1>
         <h2 class="frase">"Duplicado de llaves, cambios de guardas, mantenimiento de chapas ,venta de chapas y
           candados."</h2>
-        <button type="button" class="btn btn-primary">Leer mas</button>
-        <button type="button" class="btn btn-outline-light">Contactanos</button>
+        <button type="button" (click)="goToServicios()" class="btn btn-primary">Leer mas</button>
+        <button type="button" (click)="goToContacto()" class="btn btn-outline-light">Contactanos</button>
       </div>
     </div>
     <div class="carousel-item">
@@ -32,8 +32,8 @@
         <h1 class="titulo">Herramientas</h1>
         <h2 class="frase">"Ofrecemos una gran variedad de herramientas y productos relacionados con el ramo ferretero."
         </h2>
-        <button type="button" class="btn btn-primary">Leer mas</button>
-        <button type="button" class="btn btn-outline-light">Contactanos</button>
+        <button type="button" (click)="goToProductos()"  class="btn btn-primary">Leer mas</button>
+        <button type="button" (click)="goToContacto()" class="btn btn-outline-light">Contactanos</button>
       </div>
     </div>
   </div>
@@ -57,10 +57,10 @@
       <div class="card-body">
         <h3 class="card-title">Nuestros Productos</h3>
             <p class="card-text">Actualmente ofrecemos Herraminetas, Herragro,
-               Toolcra, Stanley,Ranger ,Colima, Tornillería, Carretillas, Manilas,
-               Lijas, Abrasivos, Puntillas,Alambres, Guayas, Cerraduras, Herramientas eléctricas,
+               Toolcra, Stanley, Ranger, Colima, Tornillería, Carretillas, Manilas,
+               Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas,
                Herrajes, Tubería PVC y Sanitaria y todo lo relacionado con el ramo.</p>
-            <a href="" class="btn btn-outline-light btn-sm">Ver productos</a>
+            <button (click)="goToProductos()" class="btn btn-outline-light btn-sm">Ver productos</button>
       </div>
     </div>
   </div>
@@ -72,8 +72,8 @@
         <h3 class="card-title">Nuestra Atención</h3>
         <p class="card-text">Actualmente no prestamos servicio en nuestras
           instalaciones físicas por el COVID 19, pero puedes contactarnos
-          por nuestros canales de comunicación.</p>
-        <a href="" class="btn btn-outline-light btn-sm">Ver canales de comunicación</a>
+          por nuestros canales de comunicación y con gusto te atenderemos.</p>
+        <button (click)="goToContacto()"class="btn btn-outline-light btn-sm">Ver canales de comunicación</button>
       </div>
     </div>
   </div>

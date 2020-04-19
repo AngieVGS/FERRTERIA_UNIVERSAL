@@ -11,20 +11,11 @@
           <hr>
           <div class="row">
             <ul class="footer-links col-xs-6 col-md-6">
-                <li><a href="#">>> Quiénes Somos</a></li>
-                <li><a href="#">>> Servicios</a></li>
-                <li><a href="#">>> Projects</a></li>
-                <li><a href="#">>> Blog</a></li>
-                <li><a href="#">>> Pricing</a></li>
-                <li><a href="#">>> Contacto </a></li>
-              </ul>
-              <ul class="footer-links col-xs-6 col-md-6">
-                <li><a href="#">>> Galería</a></li>
-                <li><a href="#">>> PF</a></li>
-                <li><a href="#">>> Comentarios</a></li>
-                <li><a href="#">>> Localización</a></li>
-                <li><a href="#">>> Términos</a></li>
-                <li><a href="#">>> Politicas</a></li>
+                <li><a (click)="goToQuienesSomos()">>> Quiénes Somos</a></li>
+                <li><a (click)="goToServicios()">>> Servicios</a></li>
+                <li><a (click)="goToProductos()">>> Productos</a></li>
+                <li><a (click)="goToContacto()">>> Contacto </a></li>
+                <li><a href="{{empresa.ubicacion.mapsLocation}}">>> Localización</a></li>
               </ul>
           </div>
         </div>
@@ -39,27 +30,6 @@
             <p class="font-weight-light">Sábado: &nbsp;&nbsp;&nbsp; 8AM - 5PM</p>
             <p class="font-weight-light">Domingo: &nbsp;&nbsp;&nbsp; <span id="rojo">CERRADO</span></p>
             <p class="font-weight-light">Festivos: &nbsp;&nbsp;&nbsp; 8AM - 2PM</p>
-        </div>
-        <div class="col-xs-12 col-md-3">
-            <h6>Álbum</h6>
-            <hr>
-            <div class="container">
-                <div class="row my-3">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                </div>
-                <div class="row my-3">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                </div>
-                <div class="row my-3">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <img src="//placehold.it/200x140" class="img-responsive col-sm-12 col-md-4 my-2">
-                    <div class="col-md-4"><img src="//placehold.it/200x140" class="img-thumbnail img-responsive"></div>
-                </div>
-            </div>
         </div>
       </div>
       <hr class="largo">

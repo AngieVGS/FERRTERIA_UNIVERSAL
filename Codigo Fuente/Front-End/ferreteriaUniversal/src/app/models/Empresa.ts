@@ -1,13 +1,13 @@
 import { Ubicacion } from './Ubicacion';
 import { Producto } from './Producto';
-import { Categoria } from './Categoria';
 
 export class Empresa{
 
-  static productos = [
+  getProductos(): any[]{
+    return [
     {
         "nombre": "Cadenas y antirrobos",
-        "categoria": "Articulos Seguridad",
+        'categoria': "Articulos Seguridad",
         "imagen": "/assets/productos/Cadenas y antirrobos.jpg"
     },
     {
@@ -966,6 +966,7 @@ export class Empresa{
         "imagen": "/assets/productos/Poleas para carga.jpg"
     }
 ];
+  };
 
   nombre = 'Ferreteria Universal S.A.S';
   telefono = ['(+57) 8 7438956', '(+57) 320 2360736' ];
@@ -979,5 +980,5 @@ export class Empresa{
   mision = '';
   vision = '';
   quehacemos = '' ;
-
+  historia = '';
 }

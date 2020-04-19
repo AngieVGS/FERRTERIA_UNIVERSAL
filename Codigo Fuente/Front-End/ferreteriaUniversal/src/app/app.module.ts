@@ -17,6 +17,9 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatCardModule} from '@angular/material/card';
+
 
 // Componenetes creados
 import { BarraNavegacionComponent } from './HomePage/barra-navegacion/barra-navegacion.component';
@@ -31,6 +34,8 @@ import { TestimoniosComponent } from './HomePage/testimonios/testimonios.compone
 import { ProductosComponent } from './HomePage/productos/productos.component';
 import { ContactoComponent } from './Contacto/contacto/contacto.component';
 import { ServiciosComponent } from './Servicios/servicios/servicios.component';
+import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
+import { CardProductoComponent } from './Productos/card-producto/card-producto.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +51,9 @@ import { ServiciosComponent } from './Servicios/servicios/servicios.component';
     ProductosComponent,
     AboutUsComponent,
     ContactoComponent,
-    ServiciosComponent
+    ServiciosComponent,
+    SeccionProductosComponent,
+    CardProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,9 @@ import { ServiciosComponent } from './Servicios/servicios/servicios.component';
     MatListModule,
     MatIconModule,
     MatButtonModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatChipsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import * as router_1 from '@angular/router';
 
 @Component({
   selector: 'app-barra-navegacion',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class BarraNavegacionComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: router_1.Router) { }
 
   ngOnInit(): void {
   }
@@ -18,17 +18,17 @@ export class BarraNavegacionComponent implements OnInit {
   }
 
   goToProductos(){
-    this.router.navigate(['Productos']);
+    this.router.navigate(['productos']);
   }
 
   goToContacto(){
-    this.router.navigate(['Contacto']);
+    this.router.navigate(['contacto']);
   }
 
   goToQuienesSomos(){
     this.router.navigate(['aboutUs']);
   }
   goToServicios(){
-    this.router.navigate(['Servicios']);
+    this.router.navigate(['servicios']);
   }
 }
