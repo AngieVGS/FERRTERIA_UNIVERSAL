@@ -36,6 +36,8 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
 import { ServiciosComponent } from './Servicios/servicios/servicios.component';
 import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
 import { CardProductoComponent } from './Productos/card-producto/card-producto.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import { CardProductoComponent } from './Productos/card-producto/card-producto.c
     MatButtonModule,
     MatButtonToggleModule,
     MatChipsModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

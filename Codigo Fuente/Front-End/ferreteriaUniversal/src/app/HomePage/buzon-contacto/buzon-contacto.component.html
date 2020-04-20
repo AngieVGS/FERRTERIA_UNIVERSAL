@@ -10,30 +10,30 @@
             </div>
             <div class="col-md-7" style="background-color: white;">
               <h1 class="my-3">No dude en contactarnos, saludanos te responderemos lo mas rapido posible</h1>
-              <form>
-                <div class="form-row my-3">
+              <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
+                <div class="form-row my-3 form-group">
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Nombre completo">
+                    <input type="text" class="form-control"   name="nombre" placeholder="Nombre completo" ngModel>
                   </div>
                   <div class="col">
-                    <input type="text" class="form-control" placeholder="Correo Electrónico">
+                    <input type="text" class="form-control"  name="email" placeholder="Correo Electrónico" ngModel>
                   </div>
                 </div>
                 <div class="form-row my-3">
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Número de teléfono">
+                      <input type="text" class="form-control" name="telefono" placeholder="Número de teléfono" ngModel>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" placeholder="Asunto">
+                      <input type="text" class="form-control" name="asunto" placeholder="Asunto" ngModel>
                     </div>
                 </div>
                 <div class="form-row my-3">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Envíanos un mensaje" style="height: 120px;">
+                        <input type="text" class="form-control" name="mensaje" placeholder="Envíanos un mensaje" style="height: 120px;" ngModel>
                     </div>
                 </div>
+                <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
               </form>
-              <button type="button" class="btn btn-primary btn-lg">Enviar mensaje --></button>
             </div>
         </div>
     </div>
