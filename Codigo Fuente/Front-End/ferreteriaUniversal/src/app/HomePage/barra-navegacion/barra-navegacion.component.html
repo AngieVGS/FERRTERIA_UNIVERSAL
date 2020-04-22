@@ -1,5 +1,5 @@
 <div style="height: 85vh; background-color: white;">
-  <div class="toolbar">
+  <div class="toolbar" autofocus="true">
     <mat-toolbar>
       <mat-toolbar-row>
         <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
@@ -19,7 +19,7 @@
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-  <mat-sidenav-container fxFlexFill>
+  <mat-sidenav-container  fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list class="options-slider">
         <a mat-list-item (click)="goToInicio()">Inicio</a>
@@ -29,8 +29,8 @@
         <a mat-list-item (click)="goToContacto()">Contacto</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>
-      <ng-component></ng-component>
+    <mat-sidenav-content fxFlexFill  autofocus="true">
+      <router-outlet></router-outlet>
       <app-footer></app-footer>
     </mat-sidenav-content>
   </mat-sidenav-container>

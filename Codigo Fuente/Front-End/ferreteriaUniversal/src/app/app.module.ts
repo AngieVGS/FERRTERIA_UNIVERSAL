@@ -31,7 +31,6 @@ import { WhatWeDoComponent } from './HomePage/what-we-do/what-we-do.component';
 import { BuzonContactoComponent } from './HomePage/buzon-contacto/buzon-contacto.component';
 import { FooterComponent } from './HomePage/footer/footer.component';
 import { TestimoniosComponent } from './HomePage/testimonios/testimonios.component';
-import { ProductosComponent } from './HomePage/productos/productos.component';
 import { ContactoComponent } from './Contacto/contacto/contacto.component';
 import { ServiciosComponent } from './Servicios/servicios/servicios.component';
 import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
@@ -50,12 +49,11 @@ import { HttpClientModule } from '@angular/common/http';
     BuzonContactoComponent,
     FooterComponent,
     TestimoniosComponent,
-    ProductosComponent,
     AboutUsComponent,
     ContactoComponent,
     ServiciosComponent,
     SeccionProductosComponent,
-    CardProductoComponent
+    CardProductoComponent,
   ],
   imports: [
     BrowserModule,

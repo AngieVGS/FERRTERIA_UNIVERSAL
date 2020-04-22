@@ -8,7 +8,12 @@ import * as router_1 from '@angular/router';
 })
 export class BarraNavegacionComponent implements OnInit {
 
-  constructor(private router: router_1.Router) { }
+  constructor(private router: router_1.Router) {
+    this.router.events
+    .subscribe (() => {
+    document.querySelector ('.mat-sidenav-content'). scrollTop = 0;
+  });
+  }
 
   ngOnInit(): void {
   }

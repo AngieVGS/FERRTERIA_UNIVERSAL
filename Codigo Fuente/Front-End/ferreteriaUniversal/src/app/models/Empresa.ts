@@ -1,20 +1,109 @@
 import { Ubicacion } from './Ubicacion';
-import { Producto } from './Producto';
 
 export class Empresa {
   nombre = 'Ferreteria Universal S.A.S';
-  telefono = ['(+57) 8 7438956', '(+57) 320 2360736' ];
-  whatsapp = '573214357026';
-  ubicacion = new Ubicacion('calle 20 # 14-32', 'Tunja', 'Boyaca', 'Colombia', 'https://goo.gl/maps/jfKJhRUi57KQjuXL8');
-  email = 'pativivi203@gmail.com';
-  instagram = '';
+  telefono = ['(+57) 311 4697080', '(+57) 310 5759823'];
+  whatsapp = '573105759823';
+  ubicacion = new Ubicacion(
+    'calle 20 # 14-32',
+    'Tunja',
+    'Boyaca',
+    'Colombia',
+    'https://goo.gl/maps/jfKJhRUi57KQjuXL8'
+  );
+  email = 'ferreteriauniversaltunja@gmail.com';
+  instagram = 'https://www.instagram.com/ferreteriauniversaltunja/?hl=es-la';
   facebook = 'https://www.facebook.com/FerreteriaUniversalSas/';
-  twitter = '';
-  linkendin = '';
+  twitter = 'https://twitter.com/FerreteriaUniv2';
+  linkendin = 'https://www.linkedin.com/company/ferreteria-universal-s-a-s/';
   mision = '';
   vision = '';
-  quehacemos = '' ;
+  quehacemos =
+    'Actualmente ofrecemos Herraminetas, Herragro, Toolcra, Stanley, Ranger, Colima, Tornillería, Carretillas, Manilas, Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas, Herrajes, Tubería PVC y Sanitaria y todo lo relacionado con el ramo.';
   historia = '';
+
+  public getCategorias(): any[] {
+    return [
+      {
+        categoria: 'Articulos Seguridad',
+      },
+      {
+        categoria: 'Elementos de Unión',
+      },
+      {
+        categoria: 'Equipamiento Para Soldadura',
+      },
+      {
+        categoria: 'Equipos de Protección individual',
+      },
+      {
+        categoria: 'Herrajes',
+      },
+      {
+        categoria: 'Herramientas Abrasivas',
+      },
+      {
+        categoria: 'Herramientas de Mano',
+      },
+      {
+        categoria: 'Herramientas Eléctricas',
+      },
+      {
+        categoria: 'Herramientas para Máquinas complementos',
+      },
+      {
+        categoria: 'Herramientas de Sujeción',
+      },
+      {
+        categoria: 'Herramientas manuales para huerto y Jardín',
+      },
+      {
+        categoria: 'Herramientas para Construcción e instaladores',
+      },
+      {
+        categoria: 'Herramientas para madera y carpinteria',
+      },
+      {
+        categoria: 'Mangueras',
+      },
+      {
+        categoria: 'Máquinas manuales para construcción y obras públicas',
+      },
+      {
+        categoria: 'Materiales de desgaste para Construcción y obras públicas',
+      },
+      {
+        categoria: 'Medición Dimensional',
+      },
+      {
+        categoria: 'Productos de Fijación y sellado',
+      },
+      {
+        categoria: 'Productos de Impermeabilización',
+      },
+      {
+        categoria: 'Productos para limpieza profesional',
+      },
+      {
+        categoria: 'Rejillas',
+      },
+      {
+        categoria: 'Rodamientos y Ruedas',
+      },
+      {
+        categoria: 'Tuberías y accesorios',
+      },
+      {
+        categoria: 'Utensilios de limpieza',
+      },
+      {
+        categoria: 'Válvulas',
+      },
+      {
+        categoria: 'Varios Ferreteria',
+      },
+    ];
+  }
 
   getProductos(): any[] {
     return [
