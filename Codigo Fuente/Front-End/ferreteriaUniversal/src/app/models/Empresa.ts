@@ -16,8 +16,18 @@ export class Empresa {
   facebook = 'https://www.facebook.com/FerreteriaUniversalSas/';
   twitter = 'https://twitter.com/FerreteriaUniv2';
   linkendin = 'https://www.linkedin.com/company/ferreteria-universal-s-a-s/';
-  mision = '';
-  vision = '';
+  mision = 'Prestar un servicio excelente a la comunidad en general, con atención, variedad de productos y precios, calidad y asesoría.'+
+  'De esta forma generamos opciones de compra por parte del cliente y a la vez una estrategia de venta,'+
+  ' que retribuya la inversión y el esfuerzo de los socios, promoviendo fuente de empleo y desarrollo integral'+
+  ' de nuestros colaboradores. Capacitar dia a dia a nuestros colaboradores para que conzcan cada uno de los productos,'
+  +' sus caracteristicas, fortalezas y debilidades. Creando una imagen de confianza ante la comunidad y un liderazgo en'+
+  ' el sector ferretero locar y regional';
+  vision = ' En el proximo decenio, afianzaremos y fortaleceremos nuestro liderazgo como distribuidores y '+
+  ' comercializadores de productos nacioneles e importados. Ampliaremos esa gama de productos con calidad y precio.'+
+  'Seremos reconocidos a nivel local y regional por nuestra asesoria apropiada, la atención y tecnología.'+
+  'Ampliaremos nuestro servicio a una red de distribución local, creando y regional. Fortaleceremos el comercio local,'+
+  'creando sentido de pertenencia por nuestra cuidad.Seremos reconocidos por nuetro esfuerzo, dedicación, colaboración,'+
+  'y por afianzarnos del sector ferretero.';
   quehacemos =
     'Actualmente ofrecemos Herraminetas, Herragro, Toolcra, Stanley, Ranger, Colima, Tornillería, Carretillas, Manilas, Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas, Herrajes, Tubería PVC y Sanitaria y todo lo relacionado con el ramo.';
   historia = '';
