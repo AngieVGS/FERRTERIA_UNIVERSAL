@@ -1,6 +1,6 @@
-jumbotron_principal {
+.jumbotron_principal {
   font-family: 'Montserrat', sans-serif;
-  padding: 150px 0;
+  padding: 100px 0;
   background: url("/assets/img_servicios/TITULO.jpg") center center;
   background-size: cover;
   text-align: center;
@@ -34,8 +34,11 @@ jumbotron_principal {
   background-color: white;
 }
 
-.tarjeta_servicio{
-  border: 2px solid rgb(159,159,159);
+/* .tarjeta_servicio{
+  border: 2px solid rgb(250, 17, 17);
+} */
+.card{
+  border: 2px solid rgb(105, 104, 105);
   border-style: dotted;
 }
 
@@ -61,12 +64,12 @@ jumbotron_principal {
 }
 
 .texto_jumbotron_2 h1 {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 100%;
   font-weight: bold;
   margin-bottom: 10px;
-  padding-left: 20%;
-  padding-right: 20%;
+  padding-left: 10%;
+  padding-right: 10%;
   color: rgb(54,55,90);
 }
 
@@ -78,4 +81,126 @@ jumbotron_principal {
   padding: 20px;
   margin-top: 10px;
   border-style: none;
+}
+
+/*=============================================
+ESCRITORIO EXTRA GRANDE (XL revisamos en 1200px en adelante)
+=============================================*/
+
+@media (min-width:1200px){
+  .card-title{
+    font-size: 30px;
+    line-height: 100%;
+  }		
+  .card-text{
+    font-size: 22px;
+    line-height: 100%;
+  }
+}
+
+/*=============================================
+ESCRITORIO GRANDE (LG revisamos en 1366px en adelante)
+=============================================*/
+
+@media (max-width:1199px) and (min-width: 992px){
+  .card-title{
+    font-size: 26px;
+    line-height: 100%;
+  }		
+  .card-text{
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .texto_jumbotron_2 h1 {
+    font-size: 50px;
+    line-height: 100%;
+  }
+}
+
+/*=============================================
+ESCRITORIO MEDIANO O TABL
+ET HORIZONTAL (MD revisamos en 1024px)
+=============================================*/
+
+@media (max-width:991px) and (min-width:768px){
+  .card-title{
+    font-size: 25px;
+    line-height: 100%;
+  }		
+  .card-text{
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .texto_jumbotron{
+    padding: 2%;
+  }
+  .texto_jumbotron_2 h1 {
+    font-size: 45px;
+    line-height: 100%;
+  }
+  .jumbotron_principal h1 {
+    font-size: 50px;
+    line-height: 100%;
+  }
+  .jumbotron_principal p {
+    font-size: 30px;
+    line-height: 100%;
+  }
+  .card-img-top{
+    max-height: 350px;
+  }
+  .tarjeta_servicio{
+    padding: 10%;
+  }
+  .card{
+    margin-top: 2%;
+  }
+}
+
+/*=============================================
+TABLET VERTICAL (SM revisamos en 768px)
+=============================================*/
+
+@media (max-width:767px) and (min-width:576px){
+  .texto_jumbotron{
+    max-width: 80%;
+  }
+  .jumbotron_principal h1 {
+    font-size: 45px;
+    line-height: 100%;
+  }
+  .jumbotron_principal p {
+    font-size: 30px;
+    line-height: 100%;
+  }
+  .card-title{
+    font-size: 24px;
+    line-height: 100%;
+  }		
+  .card-text{
+    font-size: 18px;
+    line-height: 100%;
+  }
+  .card{
+    margin-top: 2%;
+  }
+  .texto_jumbotron_2 h1 {
+    font-size: 40px;
+    line-height: 100%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .boton_contactarse{
+    font-size: 28px;
+  }
+		
+}
+
+/*=============================================
+MOVIL (XS revisamos en 320px)
+=============================================*/
+	
+@media (max-width:575px){
+
+
 }
