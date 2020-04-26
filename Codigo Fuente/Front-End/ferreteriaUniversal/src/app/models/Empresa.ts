@@ -32,9 +32,13 @@ export class Empresa {
     'Actualmente ofrecemos Herraminetas, Herragro, Toolcraft, Stanley, Ranger, Colima, Tornillería, Carretillas,'+
     ' Manilas, Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas, Herrajes, '+
     'Tubería PVC y Sanitaria y todo lo relacionado con el ramo.';
-  historia = 'Hace 35 años abrimos nuestras puertas, ofreciendo nuestros servicios y conocimientos a la comunidad'+
-  'boyacense, buscando solucionar y tener al alcance mercancía de primera necesidad en Ferretería y herramientas'+
-  ' para la construcción y el campo.';
+  historia = 'El 28 de febrero de 1980 iniciamos esta empresa, en el sur de la ciudad de Tunja, en un pequeño local'+
+  ' con poca mercancía y poco conocimiento del mercado, con el nombre de FERRETERIA GALINDO. Años mas tarde hacia'+
+  ' 1988, ya conocedores de productos y del mercado, se abre otro punto de venta en el sector la plaza de mercado'+
+  ' (hoy Plaza Real) , cambiando la antigua razón social con el nombre de FERRETERIA UNIVERSO, manteniendo los dos'+
+  ' puntos de Venta. En 1993  la empresa comienza una nueva etapa, cambiamos de administración y se generan otros'+
+  ' rumbos, e ideologías que fortalecieron la empresa. Para 2001 la empresa se divide y nace entonces FERRETERIA '+
+  'UNIVERSAL LTDA. Hoy día es una empresa que busca siempre ofrecer los mejores productos y con la mejor calidad.';
   servVenta = ' Contamos con capacitacion de los productos que ofrecemos, por lo cual te brindaremos la mejor' +
   ' asesoria en los productos de nuestro catalogo. Te brindaremos diferentes marcas y con diferentes precios pero siempre'+
   ' con la mejor calidad y garantia.'

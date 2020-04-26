@@ -34,13 +34,13 @@ public class SendEmail {
   //Pasamos por parametro: destinatario, asunto y el mensaje
     public void sendEmailBuzonContacto(String to, MailContact mail) throws MessagingException {
 
-        SimpleMailMessage email = new SimpleMailMessage();
         MimeMessage mimeMessage = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
-        String htmlMsg = "Nombre:"+mail.getNombre()+"<br/>"+
+        String htmlMsg = "<strong>Nombre:</strong>"+mail.getName()+"<br/>"+
                 "<strong>E-mail:</strong>"+mail.getEmail()+" <br/>"+
                 "<strong>Telefono:</strong>"+mail.getPhone()+"<br/>"+
-                "<strong>Mensaje:</strong>"+ mail.getMensaje();
+                "<strong>Asunto:</strong>"+mail.getSubject()+" <br/>"+
+                "<strong>Mensaje:</strong>"+ mail.getContent();
       //mimeMessage.setContent(htmlMsg, "text/html"); /** Use this or below line **/
         helper.setText(htmlMsg, true); // Use this or above line.
         helper.setTo(to);

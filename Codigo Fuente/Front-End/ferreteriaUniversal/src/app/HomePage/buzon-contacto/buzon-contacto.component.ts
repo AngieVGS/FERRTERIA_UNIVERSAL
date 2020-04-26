@@ -22,6 +22,7 @@ export class BuzonContactoComponent implements OnInit {
       const newLocal = 'Formulario de contacto';
       swal.fire(newLocal, 'Mensaje enviado correctamente', 'success');
       });
+    
   }
 
 }

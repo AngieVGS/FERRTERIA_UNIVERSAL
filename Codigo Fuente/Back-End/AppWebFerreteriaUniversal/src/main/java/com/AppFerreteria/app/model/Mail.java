@@ -3,55 +3,45 @@ package com.AppFerreteria.app.model;
 
 public class Mail {
 	
-	private String nombre;
+	private String name;
 	private String email;
 	private String subject;
-	private String mensaje;
-
+	private String content;
 	
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
 
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
-
 
 	public String getEmail() {
 		return email;
 	}
 
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 
 	public String getSubject() {
 		return subject;
 	}
 
-
 	public void setSubject(String subject) {
 		this.subject = subject;
 	}
 
-
-	public String getMensaje() {
-		return mensaje;
+	public String getContent() {
+		return content;
 	}
 
-
-	public void setMensaje(String mensaje) {
-		this.mensaje = mensaje;
+	public void setContent(String content) {
+		this.content = content;
 	}
-
 
 	@Override
 	public String toString() {
-		return "Mail [nombre=" + nombre + ", email=" + email + ", subject=" + subject + ", mensaje=" + mensaje + "]";
+		return "Mail [name=" + name + ", email=" + email + ", subject=" + subject + ", content=" + content + "]";
 	}
-
 }

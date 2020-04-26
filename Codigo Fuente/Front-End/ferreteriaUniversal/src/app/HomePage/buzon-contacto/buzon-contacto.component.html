@@ -13,7 +13,7 @@
               <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
                 <div class="form-row my-3 form-group">
                   <div class="col">
-                    <input type="text" class="form-control"   name="nombre" placeholder="Nombre completo" ngModel>
+                    <input type="text" class="form-control"   name="name" placeholder="Nombre completo" ngModel>
                   </div>
                   <div class="col">
                     <input type="text" class="form-control"  name="email" placeholder="Correo Electrónico" ngModel>
@@ -21,15 +21,15 @@
                 </div>
                 <div class="form-row my-3">
                     <div class="col">
-                      <input type="text" class="form-control" name="telefono" placeholder="Número de teléfono" ngModel>
+                      <input type="text" class="form-control" name="phone" placeholder="Número de teléfono" ngModel>
                     </div>
                     <div class="col">
-                      <input type="text" class="form-control" name="asunto" placeholder="Asunto" ngModel>
+                      <input type="text" class="form-control" name="subject" placeholder="Asunto" ngModel>
                     </div>
                 </div>
                 <div class="form-row my-3">
                     <div class="col">
-                        <input type="text" class="form-control" name="mensaje" placeholder="Envíanos un mensaje" style="height: 120px;" ngModel>
+                        <input type="text" class="form-control" name="content" placeholder="Envíanos un mensaje" style="height: 120px;" ngModel>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
