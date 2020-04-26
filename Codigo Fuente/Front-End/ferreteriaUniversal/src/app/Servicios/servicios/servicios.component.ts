@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Empresa } from 'src/app/models/Empresa';
 
 @Component({
   selector: 'app-servicios',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router';
 export class ServiciosComponent implements OnInit {
 
   constructor(public router: Router) { }
+  empresa = new Empresa();
 
   ngOnInit(): void {
   }

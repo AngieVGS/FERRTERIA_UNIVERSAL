@@ -21,16 +21,27 @@ export class Empresa {
   ' que retribuya la inversión y el esfuerzo de los socios, promoviendo fuente de empleo y desarrollo integral'+
   ' de nuestros colaboradores. Capacitar dia a dia a nuestros colaboradores para que conzcan cada uno de los productos,'
   +' sus caracteristicas, fortalezas y debilidades. Creando una imagen de confianza ante la comunidad y un liderazgo en'+
-  ' el sector ferretero locar y regional';
+  ' el sector ferretero local y regional';
   vision = ' En el proximo decenio, afianzaremos y fortaleceremos nuestro liderazgo como distribuidores y '+
-  ' comercializadores de productos nacioneles e importados. Ampliaremos esa gama de productos con calidad y precio.'+
+  ' comercializadores de productos nacionales e importados. Ampliaremos esa gama de productos con calidad y precio.'+
   'Seremos reconocidos a nivel local y regional por nuestra asesoria apropiada, la atención y tecnología.'+
-  'Ampliaremos nuestro servicio a una red de distribución local, creando y regional. Fortaleceremos el comercio local,'+
+  'Ampliaremos nuestro servicio a una red de distribución local, y regional. Fortaleceremos el comercio local,'+
   'creando sentido de pertenencia por nuestra cuidad.Seremos reconocidos por nuetro esfuerzo, dedicación, colaboración,'+
   'y por afianzarnos del sector ferretero.';
   quehacemos =
-    'Actualmente ofrecemos Herraminetas, Herragro, Toolcra, Stanley, Ranger, Colima, Tornillería, Carretillas, Manilas, Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas, Herrajes, Tubería PVC y Sanitaria y todo lo relacionado con el ramo.';
-  historia = '';
+    'Actualmente ofrecemos Herraminetas, Herragro, Toolcraft, Stanley, Ranger, Colima, Tornillería, Carretillas,'+
+    ' Manilas, Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas, Herrajes, '+
+    'Tubería PVC y Sanitaria y todo lo relacionado con el ramo.';
+  historia = 'Hace 35 años abrimos nuestras puertas, ofreciendo nuestros servicios y conocimientos a la comunidad'+
+  'boyacense, buscando solucionar y tener al alcance mercancía de primera necesidad en Ferretería y herramientas'+
+  ' para la construcción y el campo.';
+  servVenta = ' Contamos con capacitacion de los productos que ofrecemos, por lo cual te brindaremos la mejor' +
+  ' asesoria en los productos de nuestro catalogo. Te brindaremos diferentes marcas y con diferentes precios pero siempre'+
+  ' con la mejor calidad y garantia.'
+  servMantenimiento = ' Nuestros colaboradores cuentan con conocimiento y experiencia en mantenimiento de una amplia gama'+
+  ' de herramientas electricas, por lo cual te brindaremos un mantenimiento garantizado y con los mejores repuestos.';
+  servCerrajeria = 'Ofrecemos servicio de cambio de guardas, duplicados de llaves (Casa, Carro, Moto),  mantenimiento'+
+  ' y venta de chapas y candados; brindando la mayor seguridad y confianza a nuestros clientes';
 
   public getCategorias(): any[] {
     return [
