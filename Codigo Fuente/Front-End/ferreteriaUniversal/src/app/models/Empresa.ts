@@ -1,7 +1,7 @@
 import { Ubicacion } from './Ubicacion';
 
 export class Empresa {
-  nombre = 'Ferreteria Universal S.A.S';
+  nombre = 'Ferreteria Universal';
   telefono = ['(+57) 311 4697080', '(+57) 310 5759823'];
   whatsapp = '573105759823';
   ubicacion = new Ubicacion(
@@ -26,7 +26,7 @@ export class Empresa {
   ' comercializadores de productos nacionales e importados. Ampliaremos esa gama de productos con calidad y precio.'+
   'Seremos reconocidos a nivel local y regional por nuestra asesoria apropiada, la atención y tecnología.'+
   'Ampliaremos nuestro servicio a una red de distribución local, y regional. Fortaleceremos el comercio local,'+
-  'creando sentido de pertenencia por nuestra cuidad.Seremos reconocidos por nuetro esfuerzo, dedicación, colaboración,'+
+  'creando sentido de pertenencia por nuestra cuidad.Seremos reconocidos por nuestro esfuerzo, dedicación, colaboración,'+
   'y por afianzarnos del sector ferretero.';
   quehacemos =
     'Actualmente ofrecemos Herraminetas, Herragro, Toolcraft, Stanley, Ranger, Colima, Tornillería, Carretillas,'+

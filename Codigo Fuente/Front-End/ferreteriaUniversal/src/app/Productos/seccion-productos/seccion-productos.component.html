@@ -1,4 +1,5 @@
 <div class="container text-center">
+  
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
     <h1 class="titulo2">Nuestros productos</h1>
     <p class="subtitulo">
@@ -6,18 +7,29 @@
       todos al dar click en "Todos" .
     </p>
   </div>
-  <div class="container">
-    <div style="margin: 20px;">
-      <mat-chip-list>
-        <mat-chip (click) ="showAllProducts()">Todos</mat-chip>
-        <mat-chip *ngFor="let categoria of categorias" (click) ="showProductsbyCategory(categoria.categoria)">{{categoria.categoria}}</mat-chip>
-      </mat-chip-list>
+
+  <div >
+    <div class="container">
+      <input type="search" class="form-control" id="search" aria-describedby="search" id="search"
+        [(ngModel)]="searchText" name="searchText" placeholder="search.." (keyup)="applyFilter($event.target.value)">
+        <mat-form-field appearance="fill">
+          <mat-label>categorias</mat-label>
+          <mat-select>
+            <mat-option (click)="showProductsbyCategory('Todos')">Todos</mat-option>
+            <mat-option *ngFor="let categoria of categorias" (click)="showProductsbyCategory(categoria.categoria)"
+              [value]="categoria">
+              {{categoria.categoria}}
+            </mat-option>
+          </mat-select>
+  
+        </mat-form-field>
     </div>
-    <div>
-      <input type="search" class="form-control" id="search" aria-describedby="search" id="search" [(ngModel)]="searchText" name="searchText" placeholder="search.." (keyup)="showSearchResults($event)">
+
+    <div class="card-columns">
+      <app-card-producto style="display:inline-block" *ngFor="let product of obs | async" [producto]=product>
+      </app-card-producto>
     </div>
-    <div class="card-columns" >
-      <app-card-producto style="display:inline-block" *ngFor="let producto of productos" [producto]=producto></app-card-producto>
-    </div>
+
   </div>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>

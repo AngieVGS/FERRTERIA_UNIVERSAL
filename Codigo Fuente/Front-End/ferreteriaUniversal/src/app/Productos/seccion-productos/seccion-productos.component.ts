@@ -1,5 +1,10 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { Empresa } from 'src/app/models/Empresa';
+import { MatTableDataSource } from '@angular/material/table';
+import { CardProductoComponent } from '../card-producto/card-producto.component';
+import { MatPaginator } from '@angular/material/paginator';
+import { Observable } from 'rxjs';
+import { Producto } from 'src/app/models/Producto';
 
 @Component({
   selector: 'app-seccion-productos',
@@ -13,57 +18,56 @@ export class SeccionProductosComponent implements OnInit {
   productos: any = [];
   searchText = '';
   categoria = '';
-
   public searching = false;
+  dataSource: MatTableDataSource<Producto>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  obs: Observable<any>;
 
-  constructor() {
+  constructor(private changeDetectorRef: ChangeDetectorRef) {
     this.productos = this.empresa.getProductos();
     this.categorias = this.empresa.getCategorias();
+    this.dataSource = new MatTableDataSource<Producto>(this.productos);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs = this.dataSource.connect();
+  }
 
-  public showSearchResults(event: any): void {
-    this.productos = this.empresa.getProductos();
-    this.showSearch();
+  ngOnDestroy() {
+    if (this.dataSource) { 
+      this.dataSource.disconnect(); 
+    }
+  }
+
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
   public showProductsbyCategory(categoria: string): any {
-    this.categoria = categoria;
-    console.log(this.categoria);
-    this.showSearch();
-  }
-
-  public showAllProducts(){
-    this.categoria = '';
-    this.showSearch();
-  }
-
-  public showSearch(): any {
-    this.productos = this.empresa.getProductos();
-    if (!this.productos) {
-      return [];
-    }
-    if (!this.searchText && !this.categoria) {
-      return this.productos;
-    }
-    const text = this.searchText.toLowerCase();
-    const cate = this.removeDiacritics(this.categoria.toLowerCase());
-    console.log(text);
-
+    this.categoria = this.removeDiacritics(categoria);
+    this.dataSource.filter = categoria;
     const result = [];
     for (const product of this.productos){
-      if ( product.nombre.toLowerCase().indexOf(text) > -1){
-        if (this.removeDiacritics(product.categoria) == cate || !cate){
-          console.log(product.nombre.toLowerCase());
-          result.push(product);
-        }
-      }else if ( product.categoria.toLowerCase().indexOf(text.toLowerCase()) > -1 && !cate){
+      if (this.removeDiacritics(product.categoria) == this.categoria || this.categoria == 'todos'){
+        console.log(product.nombre.toLowerCase());
         result.push(product);
       }
     }
-    this.productos = result;
+    this.dataSource = new MatTableDataSource<Producto>(result);
+    this.changeDetectorRef.detectChanges();
+    this.dataSource.paginator = this.paginator;
+    this.obs = this.dataSource.connect();
   }
+
+  public showAll(): any {
+    this.dataSource.data = this.empresa.getProductos();
+  }
+
+  
   public removeDiacritics(input): string {
     var tittles = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
     var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
