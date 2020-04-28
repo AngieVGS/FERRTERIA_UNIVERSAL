@@ -1,40 +1,124 @@
 <div class="container-fluid py-2 px-4" style="background-color: rgb(61, 119, 253);">
-    <div class="container my-4" style="background-color: rgb(61, 119, 253);">
+  <div class="container my-4" style="background-color: rgb(61, 119, 253);">
         <h3 class="my-2 text-center">CONTÁCTANOS</h3>
         <h2 class="my-2 text-center">Envianos tus dudas e inquietudes</h2>
-    </div>
-    <div class="container my-4">
-        <div class="row">
-            <div class="col-md-5 text-center" style="background-color: white;">
+  </div>
+  <div class="container my-4">
+    <div class="row">
+      <div class="col-md-5 text-center" style="background-color: white;">
               <img class="img-fluid" src="/assets/logo.png" alt="" style="max-height: 450px;">
-            </div>
-            <div class="col-md-7" style="background-color: white;">
-              <h1 class="my-3">No dudes en contactarnos, saludanos te responderemos lo mas rapido posible</h1>
-              <form (ngSubmit)='contactForm(form.value)' #form='ngForm'>
-                <div class="form-row my-3 form-group">
-                  <div class="col">
-                    <input type="text" class="form-control"   name="name" placeholder="Nombre completo" ngModel>
+      </div>
+      <div class="col-md-7" style="background-color: white;">
+        <h1 class="my-3">No dudes en contactarnos, salúdanos te responderemos lo más rápido posible</h1>
+        <!-- FORMULARIO -->
+        <form [formGroup]="datos_formulario_contacto" (ngSubmit)="contactForm(form.value)" #form='ngForm'>
+          <!-- NOMBRE COMPLETO -->
+          <div class="form-row my-3">
+            <div class="col">
+              <input formControlName="nombre_completo" 
+              type="text" 
+              class="form-control" 
+              name="name"
+              placeholder="Nombre completo"
+              ngModel>
+              <div *ngIf="formulario.nombre_completo.invalid && (formulario.nombre_completo.dirty || formulario.nombre_completo.touched)" class="alert alert-danger">
+                <div *ngIf="formulario.nombre_completo.errors.required">
+                  Debe introducir su nombre
                   </div>
-                  <div class="col">
-                    <input type="text" class="form-control"  name="email" placeholder="Correo Electrónico" ngModel>
+                </div>
+              </div>
+              <!-- CORREO -->
+              <div class="col">
+                <input formControlName="correo" 
+                  type="text" 
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                  name="email"
+                  placeholder="Correo Electrónico"
+                  ngModel>                                 
+                  <div *ngIf="formulario.correo.invalid && (formulario.correo.dirty || formulario.correo.touched)">
+                    <div *ngIf="formulario.correo.errors.required" class="alert alert-danger">
+                      Debe introducir su correo electrónico
+                    </div>  
+                    <div *ngIf="formulario.correo.errors.email" class="alert alert-warning">
+                      Debe introducir un correo válido (Ej: micorreo@email.com)
+                    </div>                   
+                  </div>
+              </div>
+          </div>
+          <!-- TELEFONO + ASUNTO -->
+          <div class="form-row my-3">
+              <!-- NUMERO DE TELEFONO -->
+              <div class="col">
+                <input formControlName="telefono"
+                type="text" 
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+                placeholder="Número de teléfono"
+                pattern="^[0-9]+$"
+                name="phone"
+                minlength="10"
+                ngModel>
+                <div *ngIf="formulario.telefono.invalid && (formulario.telefono.dirty || formulario.telefono.touched)">
+                  <div *ngIf="formulario.telefono.errors.required" class="alert alert-danger">
+                    Debe ingresar un número de telefono
+                    </div>
+                  <div *ngIf="formulario.telefono.errors?.pattern" class="alert alert-warning">
+                    Debe ingresar únicamente números, sin puntos ni comas
+                  </div>
+                  <div *ngIf="formulario.telefono.errors.minlength" class="alert alert-warning">
+                    Debe ingresar al menos 10 caracteres
                   </div>
                 </div>
-                <div class="form-row my-3">
-                    <div class="col">
-                      <input type="text" class="form-control" name="phone" placeholder="Número de teléfono" ngModel>
-                    </div>
-                    <div class="col">
-                      <input type="text" class="form-control" name="subject" placeholder="Asunto" ngModel>
-                    </div>
+              </div>
+              <!-- ASUNTO -->
+              <div class="col">
+                <input formControlName="asunto" 
+                type="text" 
+                class="form-control" 
+                name="subject"
+                placeholder="Asunto"
+                maxlength="50"
+                ngModel>
+                <div *ngIf="formulario.asunto.invalid && (formulario.asunto.dirty || formulario.asunto.touched)" class="alert alert-danger">
+                  <div *ngIf="formulario.asunto.errors.required">
+                    Debe introducir el asunto
+                  </div>
+                  <div *ngIf="formulario.telefono.errors.maxlength" class="alert alert-warning">
+                    Debe ingresar como MÁXIMO 50 caracteres
+                  </div>
                 </div>
-                <div class="form-row my-3">
-                    <div class="col">
-                        <input type="text" class="form-control" name="content" placeholder="Envíanos un mensaje" style="height: 120px;" ngModel>
-                    </div>
+              </div>
+          </div>
+          <!-- MENSAJE -->
+          <div class="form-row my-3">
+            <!-- MENSAJE -->
+            <div class="col">
+              <textarea formControlName="mensaje"
+              type="text"
+              class="form-control"
+              name="content"
+              placeholder="Escribe tu mensaje"
+              maxlength="100"
+              rows="3"
+              ngModel></textarea>
+              <div *ngIf="formulario.mensaje.invalid && (formulario.mensaje.dirty || formulario.mensaje.touched)" class="alert alert-danger">
+                <div *ngIf="formulario.mensaje.errors.required">
+                  Debe introducir el asunto
                 </div>
-                <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
-              </form>
+                <div *ngIf="formulario.mensaje.errors.maxlength" class="alert alert-warning">
+                  Debe ingresar como MÁXIMO 100 caracteres
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
+          <button type="submit" [disabled]="datos_formulario_contacto.invalid" class="btn btn-primary btn-lg">
+            Enviar mensaje
+          </button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>

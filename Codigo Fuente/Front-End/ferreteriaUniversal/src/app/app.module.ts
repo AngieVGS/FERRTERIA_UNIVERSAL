@@ -38,7 +38,7 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
 import { ServiciosComponent } from './Servicios/servicios/servicios.component';
 import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
 import { CardProductoComponent } from './Productos/card-producto/card-producto.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -73,6 +73,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     MatPaginatorModule,
     MatTableModule,
     MatFormFieldModule,
