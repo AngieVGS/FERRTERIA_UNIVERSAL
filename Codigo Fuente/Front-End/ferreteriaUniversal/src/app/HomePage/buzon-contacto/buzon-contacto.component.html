@@ -106,7 +106,7 @@
               ngModel></textarea>
               <div *ngIf="formulario.mensaje.invalid && (formulario.mensaje.dirty || formulario.mensaje.touched)" class="alert alert-danger">
                 <div *ngIf="formulario.mensaje.errors.required">
-                  Debe introducir el asunto
+                  Debe escribir un mensaje
                 </div>
                 <div *ngIf="formulario.mensaje.errors.maxlength" class="alert alert-warning">
                   Debe ingresar como MÁXIMO 100 caracteres
