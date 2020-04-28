@@ -1,7 +1,6 @@
 import { Component, OnInit, Injectable, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { Empresa } from 'src/app/models/Empresa';
 import { MatTableDataSource } from '@angular/material/table';
-import { CardProductoComponent } from '../card-producto/card-producto.component';
 import { MatPaginator } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { Producto } from 'src/app/models/Producto';
@@ -33,6 +32,7 @@ export class SeccionProductosComponent implements OnInit {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
+    this.paginator._intl.itemsPerPageLabel = "Productos por pagina";
   }
 
   ngOnDestroy() {

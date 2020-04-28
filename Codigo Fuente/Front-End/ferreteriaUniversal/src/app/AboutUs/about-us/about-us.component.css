@@ -26,7 +26,6 @@
 
 .contenido{
   padding: 4vh;
-  text-align: center;
   vertical-align:middle;
 }
 
@@ -37,29 +36,9 @@
   padding: 4vh;
 }
 
-.image {
-  float: right;
-  text-align: center;
-  width: 50%;
-  box-shadow: 2px 2px 5px #999;
-}
-
-.content {
-  width: 50%;
-  overflow: hidden;
-  padding: 6vh;
-  vertical-align:middle;
-}
-
-.titulo-historia {
-  font-size: 3vw;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-}
-
-.historia {
-  font-family: 'Poppins';
-  font-weight: 400;
+.historia{
+  font-size: 18px;
+  padding: 15px;
 }
 
 .card-group {
@@ -68,7 +47,13 @@
 /* card Info*/
 
 .card-title {
-  font-size: 2.2vw;
+  font-size: 28px;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
+
+.card-text-info{
+  font-size: 18px;
+  padding: 15px;
+}
+

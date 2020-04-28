@@ -22,12 +22,17 @@
     background-color: #11af9a !important;
     color: white;
 }
+
 .titulo{
-    font-size: 3.5vw;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 30px;
 }
 
 .titulo2{
-    font-size: 3vw;   
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 30px;   
 }
 
 .color-letra-azul{

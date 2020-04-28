@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Empresa } from 'src/app/models/Empresa';
 
 @Component({
   selector: 'app-caracteristicas',
@@ -8,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class CaracteristicasComponent implements OnInit {
 
+   empresa = new Empresa();
   constructor(private router: Router) { }
 
   ngOnInit(): void {

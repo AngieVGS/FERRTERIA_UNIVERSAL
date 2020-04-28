@@ -2,18 +2,18 @@
   background-color:rgba(1,1,1,0.6);
 }
 
-.carousel-item{
-  height: 80vh;
+.carousel-inner img {
+  width:100vh;
 }
 
 h1 {
   font-family: 'Poppins';
-  font-size: 50px;
+  font-size: 5vw;
 }
 
 h2 {
   font-family: 'Poppins';
-  font-size: 40px;
+  font-size: 1em;
 }
 
 .card-group{

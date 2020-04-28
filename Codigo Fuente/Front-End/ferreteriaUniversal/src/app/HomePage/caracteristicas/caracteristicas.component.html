@@ -9,10 +9,10 @@
     <div class="carousel-item active">
       <img class="d-block w-100" src="/assets/slider-1.jpg" alt="First slide">
       <div class="carousel-caption d-none d-md-block">
-        <h1 class="titulo">Ferreteria Universal</h1>
+         <h1 class="titulo">Ferreteria Universal</h1>
         <h2 class="frase">"Danos el gusto te atenterte, te brindaremos la mejor asesoria en herramientas para tus
           trabajos."</h2>
-        <button type="button" (click)="goToQuienesSomos()" class="btn btn-primary">Leer mas</button>
+       <button type="button" (click)="goToQuienesSomos()" class="btn btn-primary">Leer mas</button>
         <button type="button" (click)="goToContacto()" class="btn btn-outline-light">Contactanos</button>
       </div>
     </div>
@@ -47,6 +47,8 @@
   </a>
 </div>
 <!--fin carousel-->
+
+
 <!-- Card de Informacion -->
 
 <div class="card-group mx-auto ml-1" >
@@ -56,10 +58,7 @@
       <img class="card-img-top" src="assets/tools.jpg" alt="Card image cap">
       <div class="card-body">
         <h3 class="card-title">Nuestros Productos</h3>
-            <p class="card-text">Actualmente ofrecemos Herraminetas, Herragro,
-               Toolcra, Stanley, Ranger, Colima, Tornillería, Carretillas, Manilas,
-               Lijas, Abrasivos, Puntillas, Alambres, Guayas, Cerraduras, Herramientas eléctricas,
-               Herrajes, Tubería PVC y Sanitaria y todo lo relacionado con el ramo.</p>
+            <p class="card-text">{{empresa.quehacemos}}</p>
             <button (click)="goToProductos()" class="btn btn-outline-light btn-sm">Ver productos</button>
       </div>
     </div>

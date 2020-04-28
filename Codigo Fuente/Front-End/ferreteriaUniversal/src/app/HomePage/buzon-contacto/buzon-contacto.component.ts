@@ -38,12 +38,11 @@ export class BuzonContactoComponent implements OnInit {
       if(data!=null){
         const newLocal = 'Formulario de contacto';
         swal.fire(newLocal, 'Mensaje enviado correctamente', 'success');
-        this.vaciarCampos();
       }else{
         swal.fire('Formulario de contacto', 'No se pudo enviar el mensaje', 'error');
-        this.vaciarCampos();
       }
     });
+    this.vaciarCampos();
   }
 
   vaciarCampos(){

@@ -1,5 +1,5 @@
 <div class="container text-center">
-  
+
   <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto">
     <h1 class="titulo2">Nuestros productos</h1>
     <p class="subtitulo">
@@ -8,21 +8,21 @@
     </p>
   </div>
 
-  <div >
-    <div class="container">
-      <input type="search" class="form-control" id="search" aria-describedby="search" id="search"
-        [(ngModel)]="searchText" name="searchText" placeholder="search.." (keyup)="applyFilter($event.target.value)">
-        <mat-form-field appearance="fill">
-          <mat-label>categorias</mat-label>
-          <mat-select>
-            <mat-option (click)="showProductsbyCategory('Todos')">Todos</mat-option>
-            <mat-option *ngFor="let categoria of categorias" (click)="showProductsbyCategory(categoria.categoria)"
-              [value]="categoria">
-              {{categoria.categoria}}
-            </mat-option>
-          </mat-select>
-  
-        </mat-form-field>
+  <div>
+    <div class="container input-group">
+      
+      <input style="height: 50px;" type="search" class="form-control" id="search" [(ngModel)]="searchText" name="searchText" placeholder="search.." (keyup)="applyFilter($event.target.value)">
+      
+      <mat-form-field appearance="fill" style="width: 30vw;">
+        
+        <mat-label>categorias</mat-label>
+        <mat-select>
+          <mat-option (click)="showProductsbyCategory('Todos')">Todos</mat-option>
+          <mat-option *ngFor="let categoria of categorias" (click)="showProductsbyCategory(categoria.categoria)"
+            [value]="categoria">{{categoria.categoria}}</mat-option>
+        </mat-select>
+
+      </mat-form-field>
     </div>
 
     <div class="card-columns">
@@ -31,5 +31,5 @@
     </div>
 
   </div>
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  <mat-paginator style="font-size: 15px;"[pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>

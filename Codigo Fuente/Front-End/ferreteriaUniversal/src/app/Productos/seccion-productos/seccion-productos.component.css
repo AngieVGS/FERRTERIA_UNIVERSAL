@@ -1,5 +1,5 @@
 .titulo2 {
-  font-size: 4vw;
+  font-size:25px;
   font-family: Poppins;
   font-weight: 700;
   margin-bottom: 25px;
@@ -13,12 +13,8 @@
 
 .search-input .box{
   margin: 100px auto;
-  width: 300px;
-  height: 50px;
 }
 
-.card-columns .card {
-  column-break-inside: avoid;
-  display: inline-block;
-  width: 100%;
+.mat-paginator{
+  background-color: #D8D8D8;
 }
