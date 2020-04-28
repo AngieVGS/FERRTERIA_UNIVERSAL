@@ -40,3 +40,15 @@ a {
    font-size: 50em;
    padding: 0.5em;
  }
+
+ @media screen and (max-width: 960px) {
+  .mapaGrande{
+    display:none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .mapaPeq{
+    display:none;
+    }
+}
