@@ -20,11 +20,11 @@ export class BuzonContactoComponent implements OnInit {
   ngOnInit(): void {
     this.datos_formulario_contacto = this.formBuilder.group({
       //[Valor inicial del campo, Validadores síncronos, Validadores asíncronos]
-      nombre_completo: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      telefono: ['', Validators.required],
-      asunto: ['', Validators.required],
-      mensaje: ['', Validators.required]
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      subject: ['', Validators.required],
+      content: ['', Validators.required]
     });
   }
 
@@ -33,32 +33,28 @@ export class BuzonContactoComponent implements OnInit {
   }
 
   contactForm(form) {
-    this.messageService.sendMessage(form).subscribe((data) => {
-      console.log("RESULTADO",  data);
-      if(data!=null){
+    this.messageService.sendMessage(form).subscribe(() => {
         const newLocal = 'Formulario de contacto';
-        swal.fire(newLocal, 'Mensaje enviado correctamente', 'success');
-      }else{
-        swal.fire('Formulario de contacto', 'No se pudo enviar el mensaje', 'error');
-      }
+       swal.fire(newLocal, 'Mensaje enviado correctamente', 'success');
+       this.vaciarCampos();
     });
-    this.vaciarCampos();
   }
 
   vaciarCampos(){
     this.datos_formulario_contacto.patchValue({
-      nombre_completo: '',
-      correo: '',
-      telefono: '',
-      asunto: '',
-      mensaje: ''
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      content: ''
     });
+
     this.datos_formulario_contacto = this.formBuilder.group({
-      nombre_completo: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      telefono: ['', Validators.required],
-      asunto: ['', Validators.required],
-      mensaje: ['', Validators.required]
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      subject: ['', Validators.required],
+      content: ['', Validators.required]
     });
   }
 }

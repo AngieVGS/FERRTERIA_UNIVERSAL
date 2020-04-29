@@ -15,43 +15,43 @@
           <!-- NOMBRE COMPLETO -->
           <div class="form-row my-3">
             <div class="col">
-              <input formControlName="nombre_completo" 
+              <input formControlName="name" 
               type="text" 
               class="form-control" 
               name="name"
               placeholder="Nombre completo"
-              ngModel>
-              <div *ngIf="formulario.nombre_completo.invalid && (formulario.nombre_completo.dirty || formulario.nombre_completo.touched)" class="alert alert-danger">
-                <div *ngIf="formulario.nombre_completo.errors.required">
+              required ngModel>
+              <div *ngIf="formulario.name.invalid && (formulario.name.dirty || formulario.name.touched)" class="alert alert-danger">
+                <div *ngIf="formulario.name.errors.required">
                   Debe introducir su nombre
                   </div>
                 </div>
               </div>
-              <!-- CORREO -->
+              <!-- email -->
               <div class="col">
-                <input formControlName="correo" 
+                <input formControlName="email" 
                   type="text" 
                   class="form-control"
                   aria-label="Sizing example input"
                   aria-describedby="inputGroup-sizing-sm"
                   name="email"
                   placeholder="Correo Electrónico"
-                  ngModel>                                 
-                  <div *ngIf="formulario.correo.invalid && (formulario.correo.dirty || formulario.correo.touched)">
-                    <div *ngIf="formulario.correo.errors.required" class="alert alert-danger">
-                      Debe introducir su correo electrónico
+                  required ngModel>                                 
+                  <div *ngIf="formulario.email.invalid && (formulario.email.dirty || formulario.email.touched)">
+                    <div *ngIf="formulario.email.errors.required" class="alert alert-danger">
+                      Debe introducir su email electrónico
                     </div>  
-                    <div *ngIf="formulario.correo.errors.email" class="alert alert-warning">
-                      Debe introducir un correo válido (Ej: micorreo@email.com)
+                    <div *ngIf="formulario.email.errors.email" class="alert alert-warning">
+                      Debe introducir un email válido (Ej: miemail@email.com)
                     </div>                   
                   </div>
               </div>
           </div>
-          <!-- TELEFONO + ASUNTO -->
+          <!-- phone + subject -->
           <div class="form-row my-3">
-              <!-- NUMERO DE TELEFONO -->
+              <!-- NUMERO DE phone -->
               <div class="col">
-                <input formControlName="telefono"
+                <input formControlName="phone"
                 type="text" 
                 class="form-control"
                 aria-label="Sizing example input"
@@ -60,62 +60,63 @@
                 pattern="^[0-9]+$"
                 name="phone"
                 minlength="10"
-                ngModel>
-                <div *ngIf="formulario.telefono.invalid && (formulario.telefono.dirty || formulario.telefono.touched)">
-                  <div *ngIf="formulario.telefono.errors.required" class="alert alert-danger">
-                    Debe ingresar un número de telefono
+                required ngModel>
+                <div *ngIf="formulario.phone.invalid && (formulario.phone.dirty || formulario.phone.touched)">
+                  <div *ngIf="formulario.phone.errors.required" class="alert alert-danger">
+                    Debe ingresar un número de phone
                     </div>
-                  <div *ngIf="formulario.telefono.errors?.pattern" class="alert alert-warning">
+                  <div *ngIf="formulario.phone.errors?.pattern" class="alert alert-warning">
                     Debe ingresar únicamente números, sin puntos ni comas
                   </div>
-                  <div *ngIf="formulario.telefono.errors.minlength" class="alert alert-warning">
+                  <div *ngIf="formulario.phone.errors.minlength" class="alert alert-warning">
                     Debe ingresar al menos 10 caracteres
                   </div>
                 </div>
               </div>
-              <!-- ASUNTO -->
+              <!-- subject -->
               <div class="col">
-                <input formControlName="asunto" 
+                <input formControlName="subject" 
                 type="text" 
                 class="form-control" 
                 name="subject"
                 placeholder="Asunto"
                 maxlength="50"
-                ngModel>
-                <div *ngIf="formulario.asunto.invalid && (formulario.asunto.dirty || formulario.asunto.touched)" class="alert alert-danger">
-                  <div *ngIf="formulario.asunto.errors.required">
-                    Debe introducir el asunto
+                required ngModel>
+                <div *ngIf="formulario.subject.invalid && (formulario.subject.dirty || formulario.subject.touched)" class="alert alert-danger">
+                  <div *ngIf="formulario.subject.errors.required">
+                    Debe introducir el subject
                   </div>
-                  <div *ngIf="formulario.telefono.errors.maxlength" class="alert alert-warning">
+                  <div *ngIf="formulario.phone.errors.maxlength" class="alert alert-warning">
                     Debe ingresar como MÁXIMO 50 caracteres
                   </div>
                 </div>
               </div>
           </div>
-          <!-- MENSAJE -->
+          <!-- content -->
           <div class="form-row my-3">
-            <!-- MENSAJE -->
+            <!-- content -->
             <div class="col">
-              <textarea formControlName="mensaje"
+              <textarea formControlName="content"
               type="text"
               class="form-control"
               name="content"
               placeholder="Escribe tu mensaje"
               maxlength="100"
               rows="3"
-              ngModel></textarea>
-              <div *ngIf="formulario.mensaje.invalid && (formulario.mensaje.dirty || formulario.mensaje.touched)" class="alert alert-danger">
-                <div *ngIf="formulario.mensaje.errors.required">
-                  Debe escribir un mensaje
+              required ngModel>
+            </textarea>
+              <div *ngIf="formulario.content.invalid && (formulario.content.dirty || formulario.content.touched)" class="alert alert-danger">
+                <div *ngIf="formulario.content.errors.required">
+                  Por favor ingresa un mensaje
                 </div>
-                <div *ngIf="formulario.mensaje.errors.maxlength" class="alert alert-warning">
+                <div *ngIf="formulario.content.errors.maxlength" class="alert alert-warning">
                   Debe ingresar como MÁXIMO 100 caracteres
                 </div>
               </div>
             </div>
           </div>
           <button type="submit" [disabled]="datos_formulario_contacto.invalid" class="btn btn-primary btn-lg">
-            Enviar mensaje
+            Enviar content
           </button>
         </form>
       </div>
