@@ -40,6 +40,7 @@ import { SeccionProductosComponent } from './Productos/seccion-productos/seccion
 import { CardProductoComponent } from './Productos/card-producto/card-producto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BlogComponent } from './HomePage/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { HttpClientModule } from '@angular/common/http';
     ServiciosComponent,
     SeccionProductosComponent,
     CardProductoComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,12 +14,13 @@
           <a mat-button (click)="goToQuienesSomos()" mat-button>Quienes Somos</a>
           <a mat-button (click)="goToServicios()" mat-button>Servicios</a>
           <a mat-button (click)="goToProductos()">Productos</a>
+          <a mat-button (click)="goToBlog()">Blog</a>
           <a mat-button (click)="goToContacto()">Contacto</a>
         </div>
       </mat-toolbar-row>
     </mat-toolbar>
   </div>
-  <mat-sidenav-container  fxFlexFill>
+  <mat-sidenav-container fxFlexFill>
     <mat-sidenav #sidenav>
       <mat-nav-list class="options-slider">
         <a mat-list-item (click)="goToInicio()">Inicio</a>
@@ -29,7 +30,7 @@
         <a mat-list-item (click)="goToContacto()">Contacto</a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content fxFlexFill  autofocus="true">
+    <mat-sidenav-content fxFlexFill autofocus="true">
       <router-outlet></router-outlet>
       <app-footer></app-footer>
     </mat-sidenav-content>

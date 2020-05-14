@@ -1,0 +1,8 @@
+.titulo-full {
+  font-size: 5vw;
+}
+
+.myjumbotron {
+  background-image: url(/assets/blog/coffee-books.jpg);
+  background-size: 100%;
+}
