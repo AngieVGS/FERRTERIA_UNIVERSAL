@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormProductoComponent } from '../form-producto/form-producto.component';
+import { Producto } from '../models/Producto';
 import { ProductService } from '../servies/product/product.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ListaProductosComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   listaEjercicios = new MatTableDataSource<Ejercicio> (ELEMENT_DATA);
-  displayedColumns: string[] = ['nombre', 'valor','nombre', 'acciones'];  
+  productList: Producto[] =[];
+  displayedColumns: string[] = ['nombre', 'valor', 'marca', "categorias", "acciones"];  
   animal: string;
   name: string;
   
@@ -52,6 +54,7 @@ export class ListaProductosComponent implements OnInit {
   loadProducts(){
     this.productsService.getAllProducts().subscribe(
       result=>{
+        this.productList = result;
         console.log(result);
       }
     );
