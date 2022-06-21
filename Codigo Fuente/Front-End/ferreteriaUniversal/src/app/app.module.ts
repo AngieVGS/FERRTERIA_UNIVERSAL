@@ -42,9 +42,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BlogComponent } from './HomePage/blog/blog.component';
 import { FormProductoComponent } from './form-producto/form-producto.component';
-import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { LoginComponent } from './login/login.component';
 import { MaterialModule } from './material.module';
+import { ListaProductosComponent } from './Productos/lista-productos/lista-productos.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +64,6 @@ import { MaterialModule } from './material.module';
     CardProductoComponent,
     BlogComponent,
     FormProductoComponent,
-    ListaProductosComponent,
     LoginComponent,
     ListaProductosComponent
   ],

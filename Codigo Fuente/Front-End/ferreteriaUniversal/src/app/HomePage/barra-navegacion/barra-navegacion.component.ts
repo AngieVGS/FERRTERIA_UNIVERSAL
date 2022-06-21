@@ -38,4 +38,8 @@ export class BarraNavegacionComponent implements OnInit {
   goToServicios() {
     this.router.navigate(['servicios']);
   }
+
+  goToListProducts() {
+    this.router.navigate(['productosList']);
+  }
 }

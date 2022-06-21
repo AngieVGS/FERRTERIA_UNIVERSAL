@@ -7,5 +7,14 @@
     <p>
       {{producto.descripcion}}
     </p>
+    <p>
+      {{producto.valorUnitario}}
+    </p>
+    <mat-chip
+    class="example-box"
+    cdkDrag
+    *ngIf=" producto.iva == '0' ">
+    Excento de IVA
+  </mat-chip>
   </mat-card-content>
 </mat-card>

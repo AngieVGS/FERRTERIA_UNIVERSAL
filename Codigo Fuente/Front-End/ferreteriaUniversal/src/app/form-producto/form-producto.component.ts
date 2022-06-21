@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogData, ListaProductosComponent } from '../lista-productos/lista-productos.component';
+import { DialogData, ListaProductosComponent } from '../Productos/lista-productos/lista-productos.component';
 
 @Component({
   selector: 'app-form-producto',

@@ -3,9 +3,10 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { FormProductoComponent } from '../form-producto/form-producto.component';
-import { Producto } from '../models/Producto';
-import { ProductService } from '../servies/product/product.service';
+import { FormProductoComponent } from 'src/app/form-producto/form-producto.component';
+import { Producto } from 'src/app/models/Producto';
+import { ProductService } from 'src/app/servies/product/product.service';
+
 
 @Component({
   selector: 'app-lista-productos',
@@ -16,14 +17,15 @@ export class ListaProductosComponent implements OnInit {
   
   @ViewChild(MatPaginator, {static: true}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
-  listaEjercicios = new MatTableDataSource<Ejercicio> (ELEMENT_DATA);
-  productList: Producto[] =[];
+  listaProductos =new MatTableDataSource<Producto> ();
   displayedColumns: string[] = ['nombre', 'valor', 'marca', "categorias", "acciones"];  
   animal: string;
   name: string;
   
   constructor(public dialog: MatDialog,
-    private productsService: ProductService) {}
+    private productsService: ProductService) {
+      this.loadProducts();
+    }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormProductoComponent, {
@@ -38,46 +40,27 @@ export class ListaProductosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listaEjercicios.paginator = this.paginator;
-    this.listaEjercicios.sort = this.sort;
     this.loadProducts();
   }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-    this.listaEjercicios.filter = filterValue.trim().toLowerCase();
-    if (this.listaEjercicios.paginator) {
-      this.listaEjercicios.paginator.firstPage();
+    this.listaProductos.filter = filterValue.trim().toLowerCase();
+    if (this.listaProductos.paginator) {
+      this.listaProductos.paginator.firstPage();
     }
   }
 
   loadProducts(){
     this.productsService.getAllProducts().subscribe(
       result=>{
-        this.productList = result;
-        console.log(result);
+        this.listaProductos = new MatTableDataSource<Producto> (result);
+        this.listaProductos.paginator = this.paginator;
+        this.listaProductos.sort = this.sort;
       }
     );
   }
 }
-
-export interface Ejercicio {
-  id: number;
-  nombre: string;
-}
-
-const ELEMENT_DATA: Ejercicio[] = [
-  {id: 1, nombre: 'Hydrogen'},
-  {id: 2, nombre: 'Helium'},
-  {id: 3, nombre: 'Lithium'},
-  {id: 4, nombre: 'Beryllium'},
-  {id: 5, nombre: 'Boron'},
-  {id: 6, nombre: 'Carbon'},
-  {id: 7, nombre: 'Nitrogen'},
-  {id: 8, nombre: 'Oxygen'},
-  {id: 9, nombre: 'Fluorine'},
-  {id: 10, nombre: 'Neon'}
-];
 
 export interface DialogData {
   animal: string;

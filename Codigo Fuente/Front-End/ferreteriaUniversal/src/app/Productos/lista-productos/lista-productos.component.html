@@ -2,15 +2,15 @@
     <div>
         <button mat-raised-button color="primary">
             <mat-icon>add</mat-icon>
-            Nuevo especialista
+            Nuevo Producto
         </button>
     </div>
 
     <mat-form-field appearance="standard">
-        <mat-label>Filter</mat-label>
-        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. esse" #input>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ingresa el texto por el cual desea filtrart" #input>
     </mat-form-field>
-    <table mat-table matSort [dataSource]="productList" class="mat-elevation-z8">
+    <table mat-table matSort [dataSource]="listaProductos" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order. 
               The actual rendered columns are set as a property on the row definition" -->
