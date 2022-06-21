@@ -6,6 +6,8 @@ import { ContactoComponent } from './Contacto/contacto/contacto.component';
 import { ServiciosComponent } from './Servicios/servicios/servicios.component';
 import { SeccionProductosComponent } from './Productos/seccion-productos/seccion-productos.component';
 import { BlogComponent } from './HomePage/blog/blog.component';
+import { Producto } from './models/Producto';
+import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'productos', component: SeccionProductosComponent },
   { path: 'servicios', component: ServiciosComponent },
   { path: 'blog', component: BlogComponent },
+  { path: 'productosList', component: ListaProductosComponent },
 ];
 
 @NgModule({

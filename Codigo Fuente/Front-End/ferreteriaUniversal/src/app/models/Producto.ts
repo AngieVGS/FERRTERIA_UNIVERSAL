@@ -1,15 +1,12 @@
+import { Descripcion } from "./descripcion";
+
 export class Producto{
+  id: string;
   nombre: string;
+  descripcion: Descripcion;
+  valorUnitario:number;
+  unidadMedida: string;
+  iva: string;
   imagen: string;
-  sinonimos: string[];
-  descripcion: string;
-
-  constructor(nombre: string, imagen: string, sinonimos: string[], descripcion: string){
-    this.nombre = nombre;
-    this.imagen = imagen;
-    this.sinonimos = sinonimos;
-    this.descripcion = descripcion;
-  }
-
-
+  categorias: string[];
 }

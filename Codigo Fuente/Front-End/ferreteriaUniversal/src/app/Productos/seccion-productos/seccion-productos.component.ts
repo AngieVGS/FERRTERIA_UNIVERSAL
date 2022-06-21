@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Observable } from 'rxjs';
 import { Producto } from 'src/app/models/Producto';
+import { ProductService } from 'src/app/servies/product/product.service';
 
 @Component({
   selector: 'app-seccion-productos',
@@ -22,7 +23,7 @@ export class SeccionProductosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   obs: Observable<any>;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef) {
+  constructor(private changeDetectorRef: ChangeDetectorRef, private productsService: ProductService) {
     this.productos = this.empresa.getProductos();
     this.categorias = this.empresa.getCategorias();
     this.dataSource = new MatTableDataSource<Producto>(this.productos);
@@ -33,12 +34,21 @@ export class SeccionProductosComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
     this.paginator._intl.itemsPerPageLabel = "Productos por pagina";
+    this.loadProducts();
   }
 
   ngOnDestroy() {
     if (this.dataSource) { 
       this.dataSource.disconnect(); 
     }
+  }
+
+  loadProducts(){
+    this.productsService.getAllProducts().subscribe(
+      result=>{
+        console.warn(result);
+      }
+    );
   }
 
   applyFilter(filterValue: string) {

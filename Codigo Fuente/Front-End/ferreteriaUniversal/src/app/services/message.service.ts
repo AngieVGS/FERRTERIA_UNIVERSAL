@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
 export class MessageService {
 
   constructor(private http: HttpClient) { }
+
   sendMessage(body) {
-   return this.http.post('http://serviciosferreteria-env.eba-9ki99cpm.us-east-2.elasticbeanstalk.com//email/sendEmailBuzon', body);
-   }
+    return this.http.post('http://serviciosferreteria-env.eba-9ki99cpm.us-east-2.elasticbeanstalk.com//email/sendEmailBuzon', body);
+  }
 }
