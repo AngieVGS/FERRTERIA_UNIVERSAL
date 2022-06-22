@@ -7,3 +7,7 @@
   table {
     width: 100%;
   }
+
+  .app-modal-window .modal-dialog .mat-dialog-containes {
+    width: 500px;
+}

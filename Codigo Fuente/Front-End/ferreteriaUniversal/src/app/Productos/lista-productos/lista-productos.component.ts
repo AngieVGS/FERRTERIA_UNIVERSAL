@@ -29,7 +29,8 @@ export class ListaProductosComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(FormProductoComponent, {
-      width: '250px',
+      height: '80%',
+      width: '90%',
       data: {name: this.name, animal: this.animal},
     });
 

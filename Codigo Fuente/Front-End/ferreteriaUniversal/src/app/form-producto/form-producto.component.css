@@ -1,0 +1,19 @@
+.mat-form-field {
+  min-width: 100%;
+}
+
+.mat-label{
+    min-width: 100%;
+}
+
+.mat-dialog-actions{
+    min-width: 100%;
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.sinonimos {
+    width: 100%;
+  }

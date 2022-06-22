@@ -1,5 +1,5 @@
 <h1 mat-dialog-title>Agregar Producto</h1>
-<div mat-dialog-content>
+<div mat-dialog-content >
   <p>Nombre del Producto</p>
   <mat-form-field appearance="fill">
     <mat-label>nombre</mat-label>
@@ -15,27 +15,56 @@
 </div>
 <div mat-dialog-content>
   <p>Unidad Medida</p>
-  <mat-form-field appearance="fill">
-    <mat-label>Unida de Medida</mat-label>
-    <input matInput (ngModel)="data.animal">
-  </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Select</mat-label>
+      <mat-select (ngModel)="data.animal">
+        <mat-option value="Unidad">Unidad</mat-option>
+        <mat-option value="Metro">Metro(m)</mat-option>
+        <mat-option value="Kilogramo">Kilogramo (Kg)</mat-option>
+        <mat-option value="Libra">Libra (Lb)</mat-option>
+        <mat-option value="Metro">Litro (L)</mat-option>
+      </mat-select>
+    </mat-form-field>
 </div>
 <div mat-dialog-content>
   <p>Valor Unitario</p>
   <mat-form-field appearance="fill">
     <mat-label>valor unidad con IVA</mat-label>
-    <input matInput (ngModel)="data.animal">
+    <input matInput (ngModel)="data.animal" type="number">
   </mat-form-field>
 </div>
 <div mat-dialog-content>
   <p>IVA</p>
   <mat-form-field appearance="fill">
-    <mat-label>nombre</mat-label>
-    <input matInput (ngModel)="data.animal">
+    <mat-label>Iva del producto (Ejemp. 0.19)</mat-label>
+    <input matInput (ngModel)="data.animal" type="number">
   </mat-form-field>
 </div>
 
+<div mat-dialog-content>
+
+<p>Nombres Asociados</p>
+<mat-form-field class="sinonimos" appearance="fill">
+  <mat-label>Nombres Asociados</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip *ngFor="let nombre of nombresAsociados" (removed)="remove(nombre)">
+      {{nombre}}
+      <button matChipRemove>
+        <mat-icon>cancel</mat-icon>
+      </button>
+    </mat-chip>
+    <input placeholder="Agregar Nombre Asociado (Sinonimo)"
+           [matChipInputFor]="chipList"
+           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+           [matChipInputAddOnBlur]="addOnBlur"
+           (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+</mat-form-field>
+</div>
+
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Aceptar</button>
+  <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
+  <button *ngIf="isAddProduct" mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>Guardar</button>
+  <button *ngIf="!isAddProduct" mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>Editar</button>
+
 </div>
