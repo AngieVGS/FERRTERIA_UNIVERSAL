@@ -8,6 +8,7 @@ import { SeccionProductosComponent } from './Productos/seccion-productos/seccion
 import { BlogComponent } from './HomePage/blog/blog.component';
 import { Producto } from './models/Producto';
 import { ListaProductosComponent } from './Productos/lista-productos/lista-productos.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: 'home', component: HomePageComponent },
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'servicios', component: ServiciosComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'productosList', component: ListaProductosComponent },
+  { path: 'login', component: LoginComponent},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
