@@ -19,8 +19,8 @@ export class ListaProductosComponent implements OnInit {
   @ViewChild(MatSort, { static: true }) sort!: MatSort;
   listaProductos =new MatTableDataSource<Producto> ();
   displayedColumns: string[] = ['nombre', 'valor', 'marca', "categorias", "acciones"];  
-  animal: string;
-  name: string;
+  producto: Producto;
+
   
   constructor(public dialog: MatDialog,
     private productsService: ProductService) {
@@ -31,12 +31,25 @@ export class ListaProductosComponent implements OnInit {
     const dialogRef = this.dialog.open(FormProductoComponent, {
       height: '80%',
       width: '90%',
-      data: {name: this.name, animal: this.animal},
+      data: { producto: this.producto},
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.animal = result;
+      this.loadProducts();
+    });
+  }
+
+  openEditDialog(product:Producto){
+    const dialogRef = this.dialog.open(FormProductoComponent, {
+      height: '80%',
+      width: '90%',
+      data: { producto: product},
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.loadProducts();
     });
   }
 
@@ -61,9 +74,23 @@ export class ListaProductosComponent implements OnInit {
       }
     );
   }
+
+  deleteProduct(product: Producto){
+    this.productsService.deleteProduct(product).subscribe(
+      result => {
+        console.log('eliminado');
+        
+        //se oculta el dialogo
+        //se puede mostrar un popup de confirmacion
+      },error =>{ 
+        //hacer alguna advertencia 
+        console.warn(error);
+      }
+    );
+  }
+
 }
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  producto: Producto
 }

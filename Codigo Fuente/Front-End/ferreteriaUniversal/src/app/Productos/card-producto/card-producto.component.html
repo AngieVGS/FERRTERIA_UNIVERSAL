@@ -1,11 +1,11 @@
 <mat-card class="card-product">
-    <img class ="image-header" mat-card-image src="{{producto.imagen}}" alt="Photo of {{producto.nombre}}">
+    <img *ngIf="producto.imagen" class ="image-header" mat-card-image src="{{producto.imagen}}" alt="Photo of {{producto.nombre}}">
+    <img *ngIf="!producto.imagen" class ="image-header" mat-card-image src="https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg">
   <mat-card-content>
     <mat-card-title>{{producto.nombre}}</mat-card-title>
-    <mat-card-subtitle>{{producto.sinonimos}}</mat-card-subtitle>
-    <mat-card-subtitle>{{producto.categoria}}</mat-card-subtitle>
+    <mat-card-subtitle>{{producto.descripcion.marca}}</mat-card-subtitle>
     <p>
-      {{producto.descripcion}}
+      {{producto.descripcion.descripcion}}
     </p>
     <p>
       {{producto.valorUnitario}}

@@ -1,4 +1,10 @@
-import { Component, OnInit, Injectable, ChangeDetectorRef, ViewChild } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Injectable,
+  ChangeDetectorRef,
+  ViewChild,
+} from '@angular/core';
 import { Empresa } from 'src/app/models/Empresa';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
@@ -12,7 +18,6 @@ import { ProductService } from 'src/app/servies/product/product.service';
   styleUrls: ['./seccion-productos.component.css'],
 })
 export class SeccionProductosComponent implements OnInit {
-
   categorias: any = [];
   empresa = new Empresa();
   productos: any = [];
@@ -23,32 +28,39 @@ export class SeccionProductosComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   obs: Observable<any>;
 
-  constructor(private changeDetectorRef: ChangeDetectorRef, private productsService: ProductService) {
-    this.productos = this.empresa.getProductos();
-    this.categorias = this.empresa.getCategorias();
-    this.dataSource = new MatTableDataSource<Producto>(this.productos);
+  constructor(
+    private changeDetectorRef: ChangeDetectorRef,
+    private productsService: ProductService
+  ) {
+    //this.productos = this.empresa.getProductos();
+    this.loadProducts();
   }
 
   ngOnInit(): void {
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
-    this.paginator._intl.itemsPerPageLabel = "Productos por pagina";
-    this.loadProducts();
+    this.paginator._intl.itemsPerPageLabel = 'Productos por pagina';
   }
 
   ngOnDestroy() {
-    if (this.dataSource) { 
-      this.dataSource.disconnect(); 
+    if (this.dataSource) {
+      this.dataSource.disconnect();
     }
   }
 
-  loadProducts(){
-    this.productsService.getAllProducts().subscribe(
-      result=>{
-        console.warn(result);
-      }
-    );
+  loadProducts() {
+    this.productsService.getAllProducts().subscribe((result) => {
+      this.productos = result;
+      console.log(this.productos);
+      this.categorias = this.empresa.getCategorias();
+      this.dataSource = new MatTableDataSource<Producto>(this.productos);
+
+      this.changeDetectorRef.detectChanges();
+      this.dataSource.paginator = this.paginator;
+      this.obs = this.dataSource.connect();
+      this.paginator._intl.itemsPerPageLabel = 'Productos por pagina';
+    });
   }
 
   applyFilter(filterValue: string) {
@@ -61,8 +73,14 @@ export class SeccionProductosComponent implements OnInit {
     this.categoria = this.removeDiacritics(categoria);
     this.dataSource.filter = categoria;
     const result = [];
-    for (const product of this.productos){
-      if (this.removeDiacritics(product.categoria) == this.categoria || this.categoria == 'todos'){
+    for (const product of this.productos) {
+      if (
+        (product.categoria != null && product.categoria != undefined || product.categoria.length >0)
+        &&
+        this.removeDiacritics(product.categoria.toString()).includes(this.categoria)
+        || this.categoria == 'todos'
+
+      ) {
         console.log(product.nombre.toLowerCase());
         result.push(product);
       }
@@ -77,13 +95,14 @@ export class SeccionProductosComponent implements OnInit {
     this.dataSource.data = this.empresa.getProductos();
   }
 
-  
   public removeDiacritics(input): string {
-    var tittles = "ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç";
-    var original = "AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc";
+    var tittles = 'ÃÀÁÄÂÈÉËÊÌÍÏÎÒÓÖÔÙÚÜÛãàáäâèéëêìíïîòóöôùúüûÑñÇç';
+    var original = 'AAAAAEEEEIIIIOOOOUUUUaaaaaeeeeiiiioooouuuunncc';
     for (var i = 0; i < tittles.length; i++) {
-        input = input.replace(tittles.charAt(i), original.charAt(i)).toLowerCase();
-    };
+      input = input
+        .replace(tittles.charAt(i), original.charAt(i))
+        .toLowerCase();
+    }
     return input;
   }
 }

@@ -1,70 +1,179 @@
-<h1 mat-dialog-title>Agregar Producto</h1>
-<div mat-dialog-content >
-  <p>Nombre del Producto</p>
-  <mat-form-field appearance="fill">
-    <mat-label>nombre</mat-label>
-    <input matInput (ngModel)="data.animal">
-  </mat-form-field>
-</div>
-<div mat-dialog-content>
-  <p>Foto del Producto</p>
-  <mat-form-field appearance="fill">
-    <mat-label>URL Imagen Del Producto </mat-label>
-    <input matInput (ngModel)="data.animal">
-  </mat-form-field>
-</div>
-<div mat-dialog-content>
-  <p>Unidad Medida</p>
+<form [formGroup]="formproducto">
+  <h1 mat-dialog-title>Agregar Producto</h1>
+  <div mat-dialog-content>
+    <p>Nombre del Producto</p>
+    <mat-form-field appearance="fill">
+      <mat-label>nombre</mat-label>
+      <input matInput formControlName="nombre" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-content>
+    <p>Marca</p>
+    <mat-form-field appearance="fill">
+      <mat-label>marca</mat-label>
+      <input matInput formControlName="marca" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-content>
+    <p>Descripción del producto</p>
+    <mat-form-field appearance="fill">
+      <mat-label>descripcion</mat-label>
+      <input matInput formControlName="descripcion" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-content>
+    <p>Foto del Producto</p>
+    <mat-form-field appearance="fill">
+      <mat-label>URL Imagen Del Producto </mat-label>
+      <input matInput formControlName="imagen" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-content>
+    <p>Unidad Medida</p>
     <mat-form-field appearance="fill">
       <mat-label>Select</mat-label>
-      <mat-select (ngModel)="data.animal">
-        <mat-option value="Unidad">Unidad</mat-option>
+      <mat-select formControlName="unidadMedida">
+        <mat-option value="Und.">Unidad</mat-option>
         <mat-option value="Metro">Metro(m)</mat-option>
         <mat-option value="Kilogramo">Kilogramo (Kg)</mat-option>
         <mat-option value="Libra">Libra (Lb)</mat-option>
         <mat-option value="Metro">Litro (L)</mat-option>
+        <mat-option value="gal">Galon (Gl)</mat-option>
       </mat-select>
     </mat-form-field>
-</div>
-<div mat-dialog-content>
-  <p>Valor Unitario</p>
-  <mat-form-field appearance="fill">
-    <mat-label>valor unidad con IVA</mat-label>
-    <input matInput (ngModel)="data.animal" type="number">
-  </mat-form-field>
-</div>
-<div mat-dialog-content>
-  <p>IVA</p>
-  <mat-form-field appearance="fill">
-    <mat-label>Iva del producto (Ejemp. 0.19)</mat-label>
-    <input matInput (ngModel)="data.animal" type="number">
-  </mat-form-field>
-</div>
+  </div>
+  <div mat-dialog-content>
+    <p>Valor Unitario</p>
+    <mat-form-field appearance="fill">
+      <mat-label>valor unidad con IVA</mat-label>
+      <input matInput formControlName="valorUnitario" type="number" />
+    </mat-form-field>
+  </div>
+  <div mat-dialog-content>
+    <p>IVA</p>
+    <mat-form-field appearance="fill">
+      <mat-label>Iva del producto (Ejemp. 0.19)</mat-label>
+      <input matInput formControlName="iva" type="number" />
+    </mat-form-field>
+  </div>
 
-<div mat-dialog-content>
+  <div mat-dialog-content>
+    <p>Nombres Asociados</p>
+    <mat-form-field class="sinonimos" appearance="fill">
+      <mat-label>Nombres Asociados</mat-label>
+      <mat-chip-list
+        #chipListNombreAsociado
+        aria-label="Seleccion de sinonimos"
+      >
+        <mat-chip
+          *ngFor="let nombre of nombresAsociados"
+          (removed)="removeSinonimo(nombre)"
+        >
+          {{ nombre }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="Agregar Nombre Asociado (Sinonimo)"
+          [matChipInputFor]="chipListNombreAsociado"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="addNombreAsociado($event)"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
 
-<p>Nombres Asociados</p>
-<mat-form-field class="sinonimos" appearance="fill">
-  <mat-label>Nombres Asociados</mat-label>
-  <mat-chip-list #chipList aria-label="Fruit selection">
-    <mat-chip *ngFor="let nombre of nombresAsociados" (removed)="remove(nombre)">
-      {{nombre}}
-      <button matChipRemove>
-        <mat-icon>cancel</mat-icon>
-      </button>
-    </mat-chip>
-    <input placeholder="Agregar Nombre Asociado (Sinonimo)"
-           [matChipInputFor]="chipList"
-           [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-           [matChipInputAddOnBlur]="addOnBlur"
-           (matChipInputTokenEnd)="add($event)">
-  </mat-chip-list>
-</mat-form-field>
-</div>
+  <div mat-dialog-content>
+    <p>Categorias</p>
+    <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-label>Favorite Categorias</mat-label>
+      <mat-chip-list #chipList aria-label="Categoria selection">
+        <mat-chip
+          *ngFor="let categoria of categorias"
+          (removed)="removeCategorias(categoria)"
+        >
+          {{ categoria }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="New categoria..."
+          #categoriaInput
+          [formControl]="categoriaCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="addCategorias($event)"
+        />
+      </mat-chip-list>
+      <mat-autocomplete
+        #auto="matAutocomplete"
+        (optionSelected)="selectedCategorias($event)"
+      >
+        <mat-option
+          *ngFor="let categoria of filteredCategorias | async"
+          [value]="categoria.categoria"
+        >
+          {{ categoria.categoria }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
 
-<div mat-dialog-actions>
-  <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
-  <button *ngIf="isAddProduct" mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>Guardar</button>
-  <button *ngIf="!isAddProduct" mat-raised-button color="primary" [mat-dialog-close]="data.animal" cdkFocusInitial>Editar</button>
+  <div mat-dialog-content>
+    <p>Caracteristicas del producto</p>
+    <mat-form-field class="caracteristicas" appearance="fill">
+      <mat-label>Caracteristicas</mat-label>
+      <mat-chip-list
+        #chipListCaracteristica
+        aria-label="Seleccion"
+      >
+        <mat-chip
+          *ngFor="let caracteristica of caracteristicas"
+          (removed)="removeCaracteristica(caracteristica)"
+        >
+          {{ caracteristica }}
+          <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+          </button>
+        </mat-chip>
+        <input
+          placeholder="Agregar caracteristica del producto"
+          [matChipInputFor]="chipListCaracteristica"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="addOnBlur"
+          (matChipInputTokenEnd)="addCaracteristica($event)"
+        />
+      </mat-chip-list>
+    </mat-form-field>
+  </div>
 
-</div>
+  <div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="onNoClick()">
+      Cancelar
+    </button>
+    <button
+      *ngIf="isAddProduct"
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="data.producto"
+      cdkFocusInitial
+      (click)="addProduct()"
+    >
+      Guardar
+    </button>
+    <button
+      *ngIf="!isAddProduct"
+      mat-raised-button
+      color="primary"
+      [mat-dialog-close]="data.producto"
+      cdkFocusInitial
+      (click)="updateProduct()"
+    >
+      Editar
+    </button>
+  </div>
+</form>
